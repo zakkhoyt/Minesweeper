@@ -7,11 +7,11 @@
 //
 
 #import "ZHOptionsTableViewController.h"
-#import "ZHGame.h"
+#import "ZHBoard.h"
 #import "ZHGameViewController.h"
 
 @interface ZHOptionsTableViewController ()
-@property (nonatomic, strong) ZHGame *game;
+
 @end
 
 @implementation ZHOptionsTableViewController
@@ -20,14 +20,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"SegueOptionsToGame"]){
         ZHGameViewController *vc = segue.destinationViewController;
-        vc.game = sender;
+        vc.board = sender;
     }
 }
 #pragma mark IBActions
 
 - (IBAction)startButtonTouchUpInside:(id)sender {
-    _game = [[ZHGame alloc]initWithSize:CGSizeMake(8, 8) mineCount:10];
-    [self performSegueWithIdentifier:@"SegueOptionsToGame" sender:_game];
+    ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(8, 8) mineCount:10];
+    [self performSegueWithIdentifier:@"SegueOptionsToGame" sender:board];
 }
 
 @end

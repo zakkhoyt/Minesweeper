@@ -7,9 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-@class ZHGame;
+@class ZHBoard;
 
 @interface ZHGameScene : SKScene
-@property (nonatomic, strong) ZHGame *game;
+@property (nonatomic, strong) ZHBoard *board;
 -(void)renderBoard;
 @end

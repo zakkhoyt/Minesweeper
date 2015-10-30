@@ -7,23 +7,28 @@
 //
 
 #import "ZHGameScene.h"
-#import "ZHGame.h"
+#import "ZHBoard.h"
 
 @implementation ZHGameScene
+
+
+#pragma mark Private methods
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
     myLabel.text = [NSString stringWithFormat:@"%lux%lu:%lu",
-                    (unsigned long)_game.size.width,
-                    (unsigned long)_game.size.height,
-                    (unsigned long)_game.mineCount];
+                    (unsigned long)_board.size.width,
+                    (unsigned long)_board.size.height,
+                    (unsigned long)_board.mineCount];
     myLabel.fontSize = 45;
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];
+    
+    [self renderBoard];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -46,12 +51,50 @@
     }
 }
 
+-(CGFloat)xSpacing{
+    return self.frame.size.width / self.board.size.width;
+}
+
+-(CGFloat)ySpacing{
+    return self.frame.size.height / self.board.size.height;
+}
+
 -(void)renderBoard{
+    [self renderGrid];
+    [self renderCells];
+}
+
+-(void)renderGrid{
+    for(NSUInteger x = 0; x <= self.board.size.width; x++){
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, nil, x * [self xSpacing], 0);
+        CGPathAddLineToPoint(path, nil, x * [self xSpacing], self.frame.size.height);
+        SKShapeNode *line = [SKShapeNode shapeNodeWithPath:path];
+        line.name = @"line";
+        line.strokeColor = [UIColor greenColor];
+        [self addChild:line];
+    }
+    
+    for(NSUInteger y = 0; y <= self.board.size.width; y++){
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, nil, 0, y * [self ySpacing]);
+        CGPathAddLineToPoint(path, nil, self.frame.size.width, y * [self ySpacing]);
+        SKShapeNode *line = [SKShapeNode shapeNodeWithPath:path];
+        line.name = @"line";
+        line.strokeColor = [UIColor greenColor];
+        [self addChild:line];
+    }
+
+}
+
+-(void)renderCells{
     
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
+
+
 
 @end

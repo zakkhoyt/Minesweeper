@@ -17,11 +17,13 @@
 @property (nonatomic) CGSize size;
 @property (nonatomic) NSUInteger mineCount;
 
+@property (nonatomic) NSUInteger roundCount;
+@property (nonatomic) NSUInteger secondsCount;
 
 
 - (instancetype)initWithSize:(CGSize)size mineCount:(NSUInteger)mineCount;
 - (void)exposeCell:(ZHCell*)cell;
 
 
-
+- (void)end;
 @end

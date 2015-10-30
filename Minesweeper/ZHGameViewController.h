@@ -8,8 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@class ZHGame;
+@class ZHBoard;
 
 @interface ZHGameViewController : UIViewController
-@property (nonatomic, strong) ZHGame *game;
+@property (nonatomic, strong) ZHBoard *board;
 @end

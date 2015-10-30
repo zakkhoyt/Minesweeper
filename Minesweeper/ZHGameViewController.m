@@ -14,7 +14,7 @@
 #import "ZHGameViewController.h"
 #import "ZHGameScene.h"
 #import "SKScene+Unarchive.h"
-#import "ZHGame.h"
+#import "ZHBoard.h"
 
 @implementation ZHGameViewController
 
@@ -30,8 +30,8 @@
     
     // Create and configure the scene.
     ZHGameScene *scene = [ZHGameScene unarchiveFromFile:@"ZHGameScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    scene.game = _game;
+    scene.scaleMode = SKSceneScaleModeResizeFill;
+    scene.board = _board;
     
     // Present the scene.
     [skView presentScene:scene];
@@ -61,7 +61,7 @@
 #pragma mark IBActions
 
 - (IBAction)endGameButtonTouchUpInside:(id)sender {
-    [_game end];
+    [_board end];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

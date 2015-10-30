@@ -22,7 +22,6 @@
 		C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */; };
 		C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */; };
 		C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */; };
-		C62DBBC51BE31CF000FEFAA2 /* ZHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +70,6 @@
 		C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Unarchive.m"; sourceTree = "<group>"; };
 		C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHOptionsTableViewController.h; sourceTree = "<group>"; };
 		C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOptionsTableViewController.m; sourceTree = "<group>"; };
-		C62DBBC31BE31CF000FEFAA2 /* ZHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGame.h; sourceTree = "<group>"; };
-		C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +174,6 @@
 				C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */,
 				C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */,
 				C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */,
-				C62DBBC31BE31CF000FEFAA2 /* ZHGame.h */,
-				C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -355,7 +350,6 @@
 				C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */,
 				C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */,
 				C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */,
-				C62DBBC51BE31CF000FEFAA2 /* ZHGame.m in Sources */,
 				C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
