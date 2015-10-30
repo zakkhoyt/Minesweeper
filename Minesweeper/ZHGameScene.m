@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Zakk Hoyt. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "ZHGameScene.h"
 
-@implementation GameScene
+@implementation ZHGameScene
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
