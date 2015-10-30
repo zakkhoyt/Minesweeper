@@ -56,7 +56,8 @@
 }
 
 -(CGFloat)ySpacing{
-    return self.frame.size.height / self.board.size.height;
+//    return self.frame.size.height / self.board.size.height;
+    return [self xSpacing];
 }
 
 -(void)renderBoard{
@@ -75,7 +76,7 @@
         [self addChild:line];
     }
     
-    for(NSUInteger y = 0; y <= self.board.size.width; y++){
+    for(NSUInteger y = 0; y <= self.board.size.height; y++){
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathMoveToPoint(path, nil, 0, y * [self ySpacing]);
         CGPathAddLineToPoint(path, nil, self.frame.size.width, y * [self ySpacing]);

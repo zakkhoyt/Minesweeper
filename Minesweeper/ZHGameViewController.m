@@ -16,25 +16,30 @@
 #import "SKScene+Unarchive.h"
 #import "ZHBoard.h"
 
+@interface ZHGameViewController ()
+@property (weak, nonatomic) IBOutlet SKView *skView;
+
+@end
+
 @implementation ZHGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
     /* Sprite Kit applies additional optimizations to improve rendering performance */
-    skView.ignoresSiblingOrder = YES;
+    self.skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
     ZHGameScene *scene = [ZHGameScene unarchiveFromFile:@"ZHGameScene"];
-    scene.scaleMode = SKSceneScaleModeResizeFill;
+    scene.scaleMode = SKSceneScaleModeAspectFit;
     scene.board = _board;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [self.skView presentScene:scene];
 }
 
 - (BOOL)shouldAutorotate {

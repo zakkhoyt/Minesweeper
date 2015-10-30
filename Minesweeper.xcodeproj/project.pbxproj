@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */; };
+		C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */; };
+		C62B84901BE4023C00D3C444 /* ZHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */; };
 		C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB791BE3189700FEFAA2 /* main.m */; };
 		C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */; };
 		C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C62B84821BE3E34600D3C444 /* ZHGameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGameCollectionViewController.h; sourceTree = "<group>"; };
+		C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGameCollectionViewController.m; sourceTree = "<group>"; };
+		C62B84881BE3F8D300D3C444 /* ZHCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCellCollectionViewCell.h; sourceTree = "<group>"; };
+		C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCellCollectionViewCell.m; sourceTree = "<group>"; };
+		C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserDefaults.h; sourceTree = "<group>"; };
+		C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserDefaults.m; sourceTree = "<group>"; };
 		C62DBB751BE3189700FEFAA2 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DBB791BE3189700FEFAA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +106,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C62B848B1BE3F8DB00D3C444 /* Game (collection view) */ = {
+			isa = PBXGroup;
+			children = (
+				C62B84821BE3E34600D3C444 /* ZHGameCollectionViewController.h */,
+				C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */,
+				C62B84881BE3F8D300D3C444 /* ZHCellCollectionViewCell.h */,
+				C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */,
+			);
+			name = "Game (collection view)";
+			sourceTree = "<group>";
+		};
+		C62B848C1BE3F8E600D3C444 /* Game (spritekit) */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
+				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
+				C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */,
+				C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */,
+				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
+			);
+			name = "Game (spritekit)";
+			sourceTree = "<group>";
+		};
+		C62B848D1BE3F8EE00D3C444 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */,
+				C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
 		C62DBB6C1BE3189700FEFAA2 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +215,8 @@
 				C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */,
 				C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */,
 				C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */,
+				C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */,
+				C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,13 +234,9 @@
 		C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
-				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
-				C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */,
-				C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */,
-				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
-				C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */,
-				C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */,
+				C62B848D1BE3F8EE00D3C444 /* Options */,
+				C62B848C1BE3F8E600D3C444 /* Game (spritekit) */,
+				C62B848B1BE3F8DB00D3C444 /* Game (collection view) */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -347,9 +386,12 @@
 				C62DBB851BE3189700FEFAA2 /* ZHGameViewController.m in Sources */,
 				C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */,
 				C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */,
+				C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */,
 				C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */,
+				C62B84901BE4023C00D3C444 /* ZHUserDefaults.m in Sources */,
 				C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */,
 				C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */,
+				C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */,
 				C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +620,7 @@
 				C62DBBA91BE3189700FEFAA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C62DBBAA1BE3189700FEFAA2 /* Build configuration list for PBXNativeTarget "MinesweeperTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +629,7 @@
 				C62DBBAC1BE3189700FEFAA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C62DBBAD1BE3189700FEFAA2 /* Build configuration list for PBXNativeTarget "MinesweeperUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +638,7 @@
 				C62DBBAF1BE3189700FEFAA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

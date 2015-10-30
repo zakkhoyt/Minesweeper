@@ -24,6 +24,8 @@
 - (instancetype)initWithSize:(CGSize)size mineCount:(NSUInteger)mineCount;
 - (void)exposeCell:(ZHCell*)cell;
 
+- (ZHCell*)cellForKey:(NSString*)key;
+- (ZHCell*)cellForIndexPath:(NSIndexPath*)indexPath;
 
 - (void)end;
 @end
