@@ -20,18 +20,25 @@
     _cell = cell;
     if(cell.isPlayed == YES){
         self.backgroundColor = [UIColor cyanColor];
-        self.adjacentBombCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
+        if(cell.adjacentBombCount == 0){
+            self.adjacentBombCountLabel.text = @"";
+        } else {
+            self.adjacentBombCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
+        }
+//        self.layer.borderWidth = 0.0;
+
     } else {
         self.adjacentBombCountLabel.text = @"";
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor blackColor];
+        self.layer.borderWidth = 1.0;
+        self.layer.borderColor = [UIColor greenColor].CGColor;
+
     }
     
     if(cell.isBomb == YES){
         self.backgroundColor = [UIColor redColor];
     }
     
-    self.layer.borderWidth = 1.0;
-    self.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 @end

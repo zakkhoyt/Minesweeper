@@ -13,6 +13,9 @@
 @interface ZHGameCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UILabel *roundsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -29,9 +32,29 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    [self.board setCellExplodedBlock:^(ZHCell *cell) {
+        NSLog(@"Cell exploded");
+    }];
+    
+    [self.board setBoardCleardBlock:^{
+        NSLog(@"Board cleared");
+    }];
+    
+    __weak typeof(self) welf = self;
+    [self.board setSecondElapsedBlock:^(NSUInteger seconds) {
+        welf.timeLabel.text = [NSString stringWithFormat:@"Sec:%lu", (unsigned long)seconds];
+    }];
+    
     [self.collectionView reloadData];
 }
 
+-(void)refreshUI{
+    [self.collectionView reloadData];
+    self.roundsLabel.text = [NSString stringWithFormat:@"Rounds:%lu", (unsigned long)self.board.roundCount];
+    self.minesLabel.text = [NSString stringWithFormat:@"Mines:%lu", (unsigned long)self.board.mineCount];
+    self.timeLabel.text = [NSString stringWithFormat:@"Sec:%lu", (unsigned long)self.board.secondsCount];
+}
 
 @end
 
@@ -50,10 +73,45 @@
 
 #pragma mark IBActions
 
-- (IBAction)endBarButtonAction:(id)sender {
-    [_board end];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+- (IBAction)quitButtonTouchUpInside:(id)sender {
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Quit?" message:@"You will lose any progress gained" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    
+    [self presentViewController:ac animated:YES completion:NULL];
+
 }
+
+- (IBAction)validateButtonTouchUpInside:(id)sender {
+    if([self.board validate] == YES){
+        NSLog(@"Validated!");
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You Win!" message:@"All mines cleared!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"Woohoo!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        
+        [self presentViewController:ac animated:YES completion:NULL];
+    } else {
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Mines remain..." message:@"Keep trying!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"I will!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }]];
+        
+        [self presentViewController:ac animated:YES completion:NULL];
+    }
+}
+
+- (IBAction)cheatButtonTouchUpInside:(id)sender {
+    
+}
+
+
 
 
 @end
@@ -83,14 +141,13 @@
 
 @implementation ZHGameCollectionViewController (UICollectionViewDelegate)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    ZHCellCollectionViewCell *cell  = [collectionView cellForItemAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor orangeColor];
     ZHCell *cell = [self.board cellForIndexPath:indexPath];
     if(cell.isPlayed == NO){
+        self.board.roundCount++;
         [self.board exposeCell:cell];
+        [self refreshUI];
     }
     
-    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
     NSLog(@"inspect");
 }
 

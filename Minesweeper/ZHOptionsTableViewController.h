@@ -18,8 +18,8 @@
 //
 
 
-#import <UIKit/UIKit.h>
+#import "ZHTableViewController.h"
 
-@interface ZHOptionsTableViewController : UITableViewController
+@interface ZHOptionsTableViewController : ZHTableViewController
 
 @end

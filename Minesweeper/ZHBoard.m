@@ -10,7 +10,11 @@
 
 @interface ZHBoard ()
 @property (nonatomic, strong) NSMutableDictionary *cells;
-//@property (nonatomic, strong) NSMutableArray *bombCells;
+@property (nonatomic, strong) ZHBoardCellExplodedBlock cellExplodedBlock;
+@property (nonatomic, strong) ZHBoardBoardClearedBlock boardClearedBlock;
+@property (nonatomic, strong) ZHBoardSecondElapsedBlock secondElapsedBlock;
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSTimer *secondsTimer;
 @end
 
 @implementation ZHBoard
@@ -25,21 +29,71 @@
     return self;
 }
 
-- (void)exposeCell:(ZHCell*)cell{
-    cell.isPlayed = YES;
-    cell.adjacentBombCount = [self calcAdjacentBombCountForCell:cell];
+-(void)setCellExplodedBlock:(ZHBoardCellExplodedBlock)cellExplodedBlock{
+    _cellExplodedBlock = cellExplodedBlock;
 }
 
-- (NSUInteger)calcAdjacentBombCountForCell:(ZHCell*)cell {
-    NSArray *neighborCells = [self getNeighboringCellsForCell:cell];
+-(void)setBoardCleardBlock:(ZHBoardBoardClearedBlock)boardClearedBlock{
+    _boardClearedBlock = boardClearedBlock;
+}
+
+- (void)setSecondElapsedBlock:(ZHBoardSecondElapsedBlock)secondElapsedBlock{
+    _secondElapsedBlock = secondElapsedBlock;
+}
+
+-(NSUInteger)secondsCount{
+    if(self.startDate == nil){
+        return 0;
+    }
+    return [[NSDate date] timeIntervalSinceDate:self.startDate];
+}
+
+- (void)exposeCell:(ZHCell*)cell{
+    // Start tracking time
+    if(self.startDate == nil){
+        self.startDate = [NSDate date];
+        self.secondsCount = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(secondsTimerElapsed) userInfo:nil repeats:YES];
+    }
+    
+    // If cell is a bomb, game over
+    if(cell.isBomb == YES) {
+        if(self.cellExplodedBlock){
+            self.cellExplodedBlock(cell);
+            return;
+        }
+    }
+    
+    cell.isPlayed = YES;
+    
+    // Calculate the number of adjacent cells. If count is 0 then expose neighboring cells.
     __block NSUInteger adjacentBombCount = 0;
+    NSArray *neighborCells = [self getNeighboringCellsForCell:cell];
     [neighborCells enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
         if(cell.isBomb == YES){
             adjacentBombCount++;
         }
     }];
-    return adjacentBombCount;
+    if(adjacentBombCount == 0){
+        [neighborCells enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+            if(cell.isPlayed == NO){
+                [self exposeCell:cell];
+            }
+        }];
+    }
+    cell.adjacentBombCount = adjacentBombCount;
 }
+
+- (BOOL)validate{
+    __block BOOL cellsRemain = NO;
+    [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(cell.isPlayed == NO && cell.isBomb == NO){
+            cellsRemain = YES;
+            *stop = YES;
+        }
+    }];
+    return !cellsRemain;
+}
+
 
 -(NSArray*)getNeighboringCellsForCell:(ZHCell*)cell{
     NSMutableArray *neighborCells = [[NSMutableArray alloc]initWithCapacity:7];
@@ -132,11 +186,14 @@
 }
 
 
-- (void)end{
-    NSLog(@"Game was ended");
-}
-
 #pragma mark Private methods
+
+-(void)secondsTimerElapsed{
+    if(self.secondElapsedBlock){
+        self.secondsCount = [[NSDate date] timeIntervalSinceDate:self.startDate];
+        self.secondElapsedBlock(self.secondsCount);
+    }
+}
 
 -(void)generateCells{
 

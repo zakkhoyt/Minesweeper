@@ -6,9 +6,9 @@
 //  Copyright © 2015 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZHViewController.h"
 @class ZHBoard;
 
-@interface ZHGameCollectionViewController : UIViewController
+@interface ZHGameCollectionViewController : ZHViewController
 @property (nonatomic, strong) ZHBoard *board;
 @end

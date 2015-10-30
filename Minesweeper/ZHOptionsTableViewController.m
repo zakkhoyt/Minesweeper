@@ -11,7 +11,7 @@
 #import "ZHGameViewController.h"
 #import "ZHGameCollectionViewController.h"
 #import "ZHUserDefaults.h"
-
+#import "ZHTitleHeaderView.h"
 
 static NSString *SegueOptionsToGame = @"SegueOptionsToGame";
 static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
@@ -21,6 +21,9 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 @property (weak, nonatomic) IBOutlet UILabel *boardWidthLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
+@end
+
+@interface ZHOptionsTableViewController (UITableViewDelegate) <UITableViewDelegate>
 @end
 
 @implementation ZHOptionsTableViewController
@@ -77,3 +80,20 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 }
 
 @end
+
+
+@implementation ZHOptionsTableViewController (UITableViewDelegate)
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 142;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    ZHTitleHeaderView *view = [[[NSBundle mainBundle]loadNibNamed:@"ZHTitleHeaderView" owner:self options:nil] firstObject];
+    return view;
+}
+
+@end
+
+
+
+

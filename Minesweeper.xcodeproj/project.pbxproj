@@ -10,6 +10,10 @@
 		C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */; };
 		C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */; };
 		C62B84901BE4023C00D3C444 /* ZHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */; };
+		C62B84941BE4116700D3C444 /* ZHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84931BE4116700D3C444 /* ZHViewController.m */; };
+		C62B84981BE411CD00D3C444 /* ZHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84971BE411CD00D3C444 /* ZHTableViewController.m */; };
+		C62B849B1BE4193B00D3C444 /* ZHTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */; };
+		C62B849D1BE4194800D3C444 /* ZHTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */; };
 		C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB791BE3189700FEFAA2 /* main.m */; };
 		C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */; };
 		C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */; };
@@ -51,6 +55,13 @@
 		C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCellCollectionViewCell.m; sourceTree = "<group>"; };
 		C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserDefaults.h; sourceTree = "<group>"; };
 		C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserDefaults.m; sourceTree = "<group>"; };
+		C62B84921BE4116700D3C444 /* ZHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHViewController.h; sourceTree = "<group>"; };
+		C62B84931BE4116700D3C444 /* ZHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHViewController.m; sourceTree = "<group>"; };
+		C62B84961BE411CD00D3C444 /* ZHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewController.h; sourceTree = "<group>"; };
+		C62B84971BE411CD00D3C444 /* ZHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewController.m; sourceTree = "<group>"; };
+		C62B84991BE4193B00D3C444 /* ZHTitleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTitleHeaderView.h; sourceTree = "<group>"; };
+		C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTitleHeaderView.m; sourceTree = "<group>"; };
+		C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHTitleHeaderView.xib; sourceTree = "<group>"; };
 		C62DBB751BE3189700FEFAA2 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DBB791BE3189700FEFAA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,9 +132,9 @@
 			children = (
 				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
 				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
+				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
 				C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */,
 				C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */,
-				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
 			);
 			name = "Game (spritekit)";
 			sourceTree = "<group>";
@@ -144,6 +155,27 @@
 				C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		C62B84951BE4116E00D3C444 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C62B84921BE4116700D3C444 /* ZHViewController.h */,
+				C62B84931BE4116700D3C444 /* ZHViewController.m */,
+				C62B84961BE411CD00D3C444 /* ZHTableViewController.h */,
+				C62B84971BE411CD00D3C444 /* ZHTableViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		C62B849E1BE4194C00D3C444 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C62B84991BE4193B00D3C444 /* ZHTitleHeaderView.h */,
+				C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */,
+				C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		C62DBB6C1BE3189700FEFAA2 = {
@@ -174,6 +206,7 @@
 				C62DBBB91BE31A3200FEFAA2 /* Model */,
 				C62DBB781BE3189700FEFAA2 /* Supporting Files */,
 				C62DBBBA1BE31A3E00FEFAA2 /* UserInterface */,
+				C62B849E1BE4194C00D3C444 /* View */,
 				C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */,
 			);
 			path = Minesweeper;
@@ -242,6 +275,7 @@
 		C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C62B84951BE4116E00D3C444 /* Base */,
 				C62B848D1BE3F8EE00D3C444 /* Options */,
 				C62B848C1BE3F8E600D3C444 /* Game (spritekit) */,
 				C62B848B1BE3F8DB00D3C444 /* Game (collection view) */,
@@ -361,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62B849D1BE4194800D3C444 /* ZHTitleHeaderView.xib in Resources */,
 				C62DBB821BE3189700FEFAA2 /* ZHGameScene.sks in Resources */,
 				C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */,
 				C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */,
@@ -396,7 +431,10 @@
 				C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */,
 				C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */,
 				C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */,
+				C62B84941BE4116700D3C444 /* ZHViewController.m in Sources */,
 				C62B84901BE4023C00D3C444 /* ZHUserDefaults.m in Sources */,
+				C62B849B1BE4193B00D3C444 /* ZHTitleHeaderView.m in Sources */,
+				C62B84981BE411CD00D3C444 /* ZHTableViewController.m in Sources */,
 				C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */,
 				C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */,
 				C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */,

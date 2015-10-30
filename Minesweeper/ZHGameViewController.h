@@ -5,11 +5,11 @@
 //  Copyright (c) 2015 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZHViewController.h"
 #import <SpriteKit/SpriteKit.h>
 
 @class ZHBoard;
 
-@interface ZHGameViewController : UIViewController
+@interface ZHGameViewController : ZHViewController
 @property (nonatomic, strong) ZHBoard *board;
 @end
