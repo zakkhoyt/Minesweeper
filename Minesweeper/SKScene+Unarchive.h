@@ -9,5 +9,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface SKScene (Unarchive)
-
++ (instancetype)unarchiveFromFile:(NSString *)file;
 @end

@@ -9,14 +9,20 @@
 /* Begin PBXBuildFile section */
 		C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB791BE3189700FEFAA2 /* main.m */; };
 		C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */; };
-		C62DBB801BE3189700FEFAA2 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* GameScene.m */; };
-		C62DBB821BE3189700FEFAA2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB811BE3189700FEFAA2 /* GameScene.sks */; };
-		C62DBB851BE3189700FEFAA2 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB841BE3189700FEFAA2 /* GameViewController.m */; };
+		C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */; };
+		C62DBB821BE3189700FEFAA2 /* ZHGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */; };
+		C62DBB851BE3189700FEFAA2 /* ZHGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */; };
 		C62DBB881BE3189700FEFAA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB861BE3189700FEFAA2 /* Main.storyboard */; };
 		C62DBB8A1BE3189700FEFAA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB891BE3189700FEFAA2 /* Assets.xcassets */; };
 		C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB8B1BE3189700FEFAA2 /* LaunchScreen.storyboard */; };
 		C62DBB981BE3189700FEFAA2 /* MinesweeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB971BE3189700FEFAA2 /* MinesweeperTests.m */; };
 		C62DBBA31BE3189700FEFAA2 /* MinesweeperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBA21BE3189700FEFAA2 /* MinesweeperUITests.m */; };
+		C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */; };
+		C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
+		C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */; };
+		C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */; };
+		C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */; };
+		C62DBBC51BE31CF000FEFAA2 /* ZHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +47,11 @@
 		C62DBB791BE3189700FEFAA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C62DBB7E1BE3189700FEFAA2 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		C62DBB7F1BE3189700FEFAA2 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		C62DBB811BE3189700FEFAA2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		C62DBB831BE3189700FEFAA2 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		C62DBB841BE3189700FEFAA2 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHGameScene.h; sourceTree = "<group>"; };
+		C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGameScene.m; sourceTree = "<group>"; };
+		C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZHGameScene.sks; sourceTree = "<group>"; };
+		C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHGameViewController.h; sourceTree = "<group>"; };
+		C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGameViewController.m; sourceTree = "<group>"; };
 		C62DBB871BE3189700FEFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C62DBB891BE3189700FEFAA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C62DBB8C1BE3189700FEFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +62,17 @@
 		C62DBB9E1BE3189700FEFAA2 /* MinesweeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinesweeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DBBA21BE3189700FEFAA2 /* MinesweeperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinesweeperUITests.m; sourceTree = "<group>"; };
 		C62DBBA41BE3189700FEFAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C62DBBB01BE318AF00FEFAA2 /* ZHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCell.h; sourceTree = "<group>"; };
+		C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCell.m; sourceTree = "<group>"; };
+		C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBoard.h; sourceTree = "<group>"; };
+		C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBoard.m; sourceTree = "<group>"; };
+		C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
+		C62DBBBC1BE31A8600FEFAA2 /* SKScene+Unarchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKScene+Unarchive.h"; sourceTree = "<group>"; };
+		C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Unarchive.m"; sourceTree = "<group>"; };
+		C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHOptionsTableViewController.h; sourceTree = "<group>"; };
+		C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOptionsTableViewController.m; sourceTree = "<group>"; };
+		C62DBBC31BE31CF000FEFAA2 /* ZHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGame.h; sourceTree = "<group>"; };
+		C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,18 +123,12 @@
 		C62DBB771BE3189700FEFAA2 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
-				C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */,
-				C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */,
-				C62DBB7E1BE3189700FEFAA2 /* GameScene.h */,
-				C62DBB7F1BE3189700FEFAA2 /* GameScene.m */,
-				C62DBB811BE3189700FEFAA2 /* GameScene.sks */,
-				C62DBB831BE3189700FEFAA2 /* GameViewController.h */,
-				C62DBB841BE3189700FEFAA2 /* GameViewController.m */,
-				C62DBB861BE3189700FEFAA2 /* Main.storyboard */,
-				C62DBB891BE3189700FEFAA2 /* Assets.xcassets */,
-				C62DBB8B1BE3189700FEFAA2 /* LaunchScreen.storyboard */,
-				C62DBB8E1BE3189700FEFAA2 /* Info.plist */,
+				C62DBBBF1BE31AA200FEFAA2 /* Categories */,
+				C62DBBB81BE31A2B00FEFAA2 /* Documents */,
+				C62DBBB91BE31A3200FEFAA2 /* Model */,
 				C62DBB781BE3189700FEFAA2 /* Supporting Files */,
+				C62DBBBA1BE31A3E00FEFAA2 /* UserInterface */,
+				C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */,
 			);
 			path = Minesweeper;
 			sourceTree = "<group>";
@@ -125,6 +136,9 @@
 		C62DBB781BE3189700FEFAA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C62DBB8E1BE3189700FEFAA2 /* Info.plist */,
+				C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */,
+				C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */,
 				C62DBB791BE3189700FEFAA2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -146,6 +160,60 @@
 				C62DBBA41BE3189700FEFAA2 /* Info.plist */,
 			);
 			path = MinesweeperUITests;
+			sourceTree = "<group>";
+		};
+		C62DBBB81BE31A2B00FEFAA2 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */,
+			);
+			name = Documents;
+			sourceTree = "<group>";
+		};
+		C62DBBB91BE31A3200FEFAA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBBB01BE318AF00FEFAA2 /* ZHCell.h */,
+				C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */,
+				C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */,
+				C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */,
+				C62DBBC31BE31CF000FEFAA2 /* ZHGame.h */,
+				C62DBBC41BE31CF000FEFAA2 /* ZHGame.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C62DBBBA1BE31A3E00FEFAA2 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBB861BE3189700FEFAA2 /* Main.storyboard */,
+				C62DBB891BE3189700FEFAA2 /* Assets.xcassets */,
+				C62DBB8B1BE3189700FEFAA2 /* LaunchScreen.storyboard */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
+				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
+				C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */,
+				C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */,
+				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
+				C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */,
+				C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C62DBBBF1BE31AA200FEFAA2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBBBC1BE31A8600FEFAA2 /* SKScene+Unarchive.h */,
+				C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +319,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62DBB821BE3189700FEFAA2 /* GameScene.sks in Resources */,
+				C62DBB821BE3189700FEFAA2 /* ZHGameScene.sks in Resources */,
+				C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */,
 				C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */,
 				C62DBB8A1BE3189700FEFAA2 /* Assets.xcassets in Resources */,
 				C62DBB881BE3189700FEFAA2 /* Main.storyboard in Resources */,
@@ -279,10 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62DBB851BE3189700FEFAA2 /* GameViewController.m in Sources */,
+				C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */,
+				C62DBB851BE3189700FEFAA2 /* ZHGameViewController.m in Sources */,
 				C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */,
-				C62DBB801BE3189700FEFAA2 /* GameScene.m in Sources */,
+				C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */,
+				C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */,
 				C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */,
+				C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */,
+				C62DBBC51BE31CF000FEFAA2 /* ZHGame.m in Sources */,
+				C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

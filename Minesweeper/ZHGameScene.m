@@ -7,6 +7,7 @@
 //
 
 #import "ZHGameScene.h"
+#import "ZHGame.h"
 
 @implementation ZHGameScene
 
@@ -14,7 +15,10 @@
     /* Setup your scene here */
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
-    myLabel.text = @"Hello, World!";
+    myLabel.text = [NSString stringWithFormat:@"%lux%lu:%lu",
+                    (unsigned long)_game.size.width,
+                    (unsigned long)_game.size.height,
+                    (unsigned long)_game.mineCount];
     myLabel.fontSize = 45;
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
@@ -40,6 +44,10 @@
         
         [self addChild:sprite];
     }
+}
+
+-(void)renderBoard{
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {

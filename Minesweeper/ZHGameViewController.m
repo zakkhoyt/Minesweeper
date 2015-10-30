@@ -6,15 +6,19 @@
 //  Copyright (c) 2015 Zakk Hoyt. All rights reserved.
 //
 
+//  End game button
+//  Validate button
+//  Cheat button
+
+
 #import "ZHGameViewController.h"
 #import "ZHGameScene.h"
 #import "SKScene+Unarchive.h"
-
+#import "ZHGame.h"
 
 @implementation ZHGameViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Configure the view.
@@ -27,18 +31,17 @@
     // Create and configure the scene.
     ZHGameScene *scene = [ZHGameScene unarchiveFromFile:@"ZHGameScene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.game = _game;
     
     // Present the scene.
     [skView presentScene:scene];
 }
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskAllButUpsideDown;
     } else {
@@ -46,8 +49,7 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
@@ -55,5 +57,13 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+#pragma mark IBActions
+
+- (IBAction)endGameButtonTouchUpInside:(id)sender {
+    [_game end];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 @end

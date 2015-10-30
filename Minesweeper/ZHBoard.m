@@ -8,6 +8,28 @@
 
 #import "ZHBoard.h"
 
+@interface ZHBoard ()
+@property (nonatomic, strong) NSMutableArray *cells;
+@end
+
 @implementation ZHBoard
+
+
+- (instancetype)initWithSize:(CGSize)size mineCount:(NSUInteger)mineCount {
+    self = [super init];
+    if (self) {
+        _size = size;
+        _mineCount = mineCount;
+//        [self generateCells];
+    }
+    return self;
+}
+
+
+
+#pragma mark Private methods
+-(void)generateBombCells{
+    
+}
 
 @end
