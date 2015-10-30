@@ -9,18 +9,29 @@
 #import "ZHCellCollectionViewCell.h"
 #import "ZHCell.h"
 
+@interface ZHCellCollectionViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *adjacentBombCountLabel;
+
+@end
+
 @implementation ZHCellCollectionViewCell
 
 -(void)setCell:(ZHCell *)cell{
     _cell = cell;
+    if(cell.isPlayed == YES){
+        self.backgroundColor = [UIColor cyanColor];
+        self.adjacentBombCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
+    } else {
+        self.adjacentBombCountLabel.text = @"";
+        self.backgroundColor = [UIColor grayColor];
+    }
+    
     if(cell.isBomb == YES){
         self.backgroundColor = [UIColor redColor];
-    } else {
-        self.backgroundColor = [UIColor cyanColor];
     }
     
     self.layer.borderWidth = 1.0;
     self.layer.borderColor = [UIColor blackColor].CGColor;
-    
 }
+
 @end

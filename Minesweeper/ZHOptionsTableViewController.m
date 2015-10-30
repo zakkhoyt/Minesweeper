@@ -21,14 +21,13 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 @property (weak, nonatomic) IBOutlet UILabel *boardWidthLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
-
 @end
 
 @implementation ZHOptionsTableViewController
 
+#pragma mark Private UIViewController overrides
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
     [self refreshUI];
 }
 
@@ -57,7 +56,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 }
 
-#pragma mark IBActions
+#pragma mark Private IBActions
 
 - (IBAction)sizeStepperValueChanged:(UIStepper*)sender {
     [ZHUserDefaults setBoardWidth:sender.value];

@@ -86,6 +86,11 @@
 //    ZHCellCollectionViewCell *cell  = [collectionView cellForItemAtIndexPath:indexPath];
 //    cell.backgroundColor = [UIColor orangeColor];
     ZHCell *cell = [self.board cellForIndexPath:indexPath];
+    if(cell.isPlayed == NO){
+        [self.board exposeCell:cell];
+    }
+    
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
     NSLog(@"inspect");
 }
 

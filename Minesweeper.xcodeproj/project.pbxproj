@@ -111,8 +111,7 @@
 			children = (
 				C62B84821BE3E34600D3C444 /* ZHGameCollectionViewController.h */,
 				C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */,
-				C62B84881BE3F8D300D3C444 /* ZHCellCollectionViewCell.h */,
-				C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */,
+				C62B84911BE404F900D3C444 /* Cell */,
 			);
 			name = "Game (collection view)";
 			sourceTree = "<group>";
@@ -136,6 +135,15 @@
 				C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */,
 			);
 			name = Options;
+			sourceTree = "<group>";
+		};
+		C62B84911BE404F900D3C444 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C62B84881BE3F8D300D3C444 /* ZHCellCollectionViewCell.h */,
+				C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		C62DBB6C1BE3189700FEFAA2 = {

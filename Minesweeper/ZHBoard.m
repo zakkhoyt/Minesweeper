@@ -26,8 +26,98 @@
 }
 
 - (void)exposeCell:(ZHCell*)cell{
-    
+    cell.isPlayed = YES;
+    cell.adjacentBombCount = [self calcAdjacentBombCountForCell:cell];
 }
+
+- (NSUInteger)calcAdjacentBombCountForCell:(ZHCell*)cell {
+    NSArray *neighborCells = [self getNeighboringCellsForCell:cell];
+    __block NSUInteger adjacentBombCount = 0;
+    [neighborCells enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(cell.isBomb == YES){
+            adjacentBombCount++;
+        }
+    }];
+    return adjacentBombCount;
+}
+
+-(NSArray*)getNeighboringCellsForCell:(ZHCell*)cell{
+    NSMutableArray *neighborCells = [[NSMutableArray alloc]initWithCapacity:7];
+    for (NSUInteger index = 0; index <= 7; index ++){
+        ZHCell *neighborCell = [self getNeighboringForCell:cell index:index];
+        if(neighborCell != nil){
+            [neighborCells addObject:neighborCell];
+        }
+    }
+    return [NSArray arrayWithArray:neighborCells];
+}
+
+// Index is defined as follows:
+//  0,1,2,
+//  3,X,4,
+//  5,6,7
+
+- (ZHCell*)getNeighboringForCell:(ZHCell*)cell index:(NSUInteger)index {
+    if(index > 7) {
+        NSLog(@"%s:%d Invalid index", __FUNCTION__, __LINE__);
+        return nil;
+    }
+
+    NSUInteger x = 0;
+    NSUInteger y = 0;
+
+    switch (index) {
+        case 0:{
+            x = cell.x - 1;
+            y = cell.y - 1;
+        }
+            break;
+        case 1:{
+            x = cell.x;
+            y = cell.y - 1;
+        }
+            break;
+        case 2:{
+            x = cell.x + 1;
+            y = cell.y - 1;
+        }
+            break;
+        case 3:{
+            x = cell.x - 1;
+            y = cell.y;
+        }
+            break;
+        case 4:{
+            x = cell.x + 1;
+            y = cell.y;
+        }
+            break;
+        case 5:{
+            x = cell.x - 1;
+            y = cell.y + 1;
+        }
+            break;
+        case 6:{
+            x = cell.x;
+            y = cell.y + 1;
+        }
+            break;
+        case 7:{
+            x = cell.x + 1;
+            y = cell.y + 1;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSString *key = [ZHCell keyFromX:x Y:y];
+    ZHCell *neighborCell = [self cellForKey:key];
+    return neighborCell;
+}
+
+
 
 - (ZHCell*)cellForKey:(NSString*)key{
     return self.cells[key];

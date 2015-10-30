@@ -81,22 +81,40 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mzG-8o-vGh">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="226" height="226"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHCellCollectionViewCell" id="UBs-uo-Ml3" customClass="ZHCellCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="226" height="226"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="226" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwa-bp-wD4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="226" height="226"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstItem="vwa-bp-wD4" firstAttribute="leading" secondItem="UBs-uo-Ml3" secondAttribute="leadingMargin" constant="-8" id="Rql-re-7eI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="vwa-bp-wD4" secondAttribute="bottom" constant="-8" id="VAr-nH-aMC"/>
+                                            <constraint firstItem="vwa-bp-wD4" firstAttribute="top" secondItem="UBs-uo-Ml3" secondAttribute="topMargin" constant="-8" id="eXN-23-n1k"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="vwa-bp-wD4" secondAttribute="trailing" constant="-8" id="jgQ-ZQ-Rat"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="adjacentBombCountLabel" destination="vwa-bp-wD4" id="QeE-fi-jAU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
