@@ -11,7 +11,7 @@
 
 @interface ZHCellCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *adjacentBombCountLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *mineImageView;
 @end
 
 @implementation ZHCellCollectionViewCell
@@ -32,13 +32,13 @@
         self.backgroundColor = [UIColor blackColor];
         self.layer.borderWidth = 1.0;
         self.layer.borderColor = [UIColor greenColor].CGColor;
-
     }
     
-    if(cell.isBomb == YES){
-        self.backgroundColor = [UIColor redColor];
+    self.mineImageView.hidden = YES;
+    if(cell.isBomb == YES && cell.bombVisible){
+        self.backgroundColor = [UIColor colorWithRed:0.3 green:0 blue:0 alpha:1];
+        self.mineImageView.hidden = NO;
     }
-    
 }
 
 @end

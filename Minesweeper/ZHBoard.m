@@ -11,7 +11,6 @@
 @interface ZHBoard ()
 @property (nonatomic, strong) NSMutableDictionary *cells;
 @property (nonatomic, strong) ZHBoardCellExplodedBlock cellExplodedBlock;
-@property (nonatomic, strong) ZHBoardBoardClearedBlock boardClearedBlock;
 @property (nonatomic, strong) ZHBoardSecondElapsedBlock secondElapsedBlock;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSTimer *secondsTimer;
@@ -33,10 +32,6 @@
     _cellExplodedBlock = cellExplodedBlock;
 }
 
--(void)setBoardCleardBlock:(ZHBoardBoardClearedBlock)boardClearedBlock{
-    _boardClearedBlock = boardClearedBlock;
-}
-
 - (void)setSecondElapsedBlock:(ZHBoardSecondElapsedBlock)secondElapsedBlock{
     _secondElapsedBlock = secondElapsedBlock;
 }
@@ -52,7 +47,7 @@
     // Start tracking time
     if(self.startDate == nil){
         self.startDate = [NSDate date];
-        self.secondsCount = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(secondsTimerElapsed) userInfo:nil repeats:YES];
+        self.secondsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(secondsTimerElapsed) userInfo:nil repeats:YES];
     }
     
     // If cell is a bomb, game over
@@ -94,6 +89,25 @@
     return !cellsRemain;
 }
 
+- (void)cheat{
+    [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(cell.isBomb == NO &&
+           cell.isPlayed == NO){
+            [self exposeCell:cell];
+            *stop = YES;
+        }
+    }];
+    
+}
+
+
+- (void)showBombs{
+    [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(cell.isBomb){
+            cell.bombVisible = YES;
+        }
+    }];
+}
 
 -(NSArray*)getNeighboringCellsForCell:(ZHCell*)cell{
     NSMutableArray *neighborCells = [[NSMutableArray alloc]initWithCapacity:7];
@@ -213,7 +227,6 @@
         // TODO: Check to see if it's already a bomb and try again
         cell.isBomb = YES;
         NSLog(@"Set bomb at %@", key);
-        
     }
 }
 

@@ -87,19 +87,28 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine" translatesAutoresizingMaskIntoConstraints="NO" id="BbX-dc-gTu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="226" height="226"/>
+                                                    <animations/>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
                                         <constraints>
+                                            <constraint firstItem="BbX-dc-gTu" firstAttribute="leading" secondItem="UBs-uo-Ml3" secondAttribute="leading" id="1E7-CC-36f"/>
+                                            <constraint firstItem="BbX-dc-gTu" firstAttribute="top" secondItem="UBs-uo-Ml3" secondAttribute="top" id="LK8-I6-HcZ"/>
                                             <constraint firstItem="vwa-bp-wD4" firstAttribute="leading" secondItem="UBs-uo-Ml3" secondAttribute="leadingMargin" constant="-8" id="Rql-re-7eI"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="vwa-bp-wD4" secondAttribute="bottom" constant="-8" id="VAr-nH-aMC"/>
                                             <constraint firstItem="vwa-bp-wD4" firstAttribute="top" secondItem="UBs-uo-Ml3" secondAttribute="topMargin" constant="-8" id="eXN-23-n1k"/>
+                                            <constraint firstAttribute="bottom" secondItem="BbX-dc-gTu" secondAttribute="bottom" id="gTO-mG-Hsn"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="vwa-bp-wD4" secondAttribute="trailing" constant="-8" id="jgQ-ZQ-Rat"/>
+                                            <constraint firstAttribute="trailing" secondItem="BbX-dc-gTu" secondAttribute="trailing" id="lgS-6g-DXv"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="adjacentBombCountLabel" destination="vwa-bp-wD4" id="QeE-fi-jAU"/>
+                                            <outlet property="mineImageView" destination="BbX-dc-gTu" id="Vii-IS-vec"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -211,7 +220,7 @@
                         <sections>
                             <tableViewSection id="Y5T-O6-mC7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aaz-L3-cGk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="aaz-L3-cGk">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aaz-L3-cGk" id="RL7-bY-kFc">
@@ -255,7 +264,7 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="raj-xb-AHb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="raj-xb-AHb">
                                         <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="raj-xb-AHb" id="G7w-2f-HH4">
@@ -299,7 +308,7 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5Nj-8k-Yvz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5Nj-8k-Yvz">
                                         <rect key="frame" x="0.0" y="88" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Nj-8k-Yvz" id="pXJ-CU-OrR">
@@ -367,5 +376,8 @@
             <point key="canvasLocation" x="-463" y="525"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mine" width="256" height="256"/>
+    </resources>
     <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -17,6 +17,7 @@
 @property (nonatomic) NSUInteger x;
 @property (nonatomic) NSUInteger y;
 @property (nonatomic) BOOL isBomb;
+@property (nonatomic) BOOL bombVisible;
 @property (nonatomic) BOOL isPlayed;
 @property (nonatomic) NSUInteger adjacentBombCount;
 

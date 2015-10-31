@@ -50,13 +50,19 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     self.boardWidthStepper.value = boardWidth;
     self.boardWidthLabel.text = [NSString stringWithFormat:@"%lux%lu",
                                  (unsigned long)boardWidth,
-                                 (unsigned long)boardWidth];
+                                 (unsigned long)[self calculateBoardHeight]];
     
     NSUInteger mineCount = [ZHUserDefaults mineCount];
     self.mineCountStepper.value = mineCount;
     self.mineCountLabel.text = [NSString stringWithFormat:@"%lu",
                                 (unsigned long)mineCount];
 
+}
+
+-(NSUInteger)calculateBoardHeight{
+    NSUInteger boardWidth = [ZHUserDefaults boardWidth];
+    NSUInteger boardHeight = boardWidth * (self.view.bounds.size.height - 74) / self.view.bounds.size.width;
+    return boardHeight;
 }
 
 #pragma mark Private IBActions
@@ -72,9 +78,10 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 }
 
 - (IBAction)startButtonTouchUpInside:(id)sender {
-    NSUInteger boardWidth = [ZHUserDefaults boardWidth];
     NSUInteger mineCount = [ZHUserDefaults mineCount];
-    ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardWidth) mineCount:mineCount];
+    NSUInteger boardWidth = [ZHUserDefaults boardWidth];
+    NSUInteger boardHeight = [self calculateBoardHeight];
+    ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
     //[self performSegueWithIdentifier:SegueOptionsToGame sender:board];
     [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
 }

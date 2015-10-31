@@ -10,7 +10,6 @@
 #import "ZHCell.h"
 
 typedef void (^ZHBoardCellExplodedBlock)(ZHCell *cell);
-typedef void (^ZHBoardBoardClearedBlock)();
 typedef void (^ZHBoardSecondElapsedBlock)(NSUInteger seconds);
 
 
@@ -34,9 +33,6 @@ typedef void (^ZHBoardSecondElapsedBlock)(NSUInteger seconds);
 // A callback block for when a cell explodes
 - (void)setCellExplodedBlock:(ZHBoardCellExplodedBlock)cellExplodedBlock;
 
-// A callback block for when the board is cleared
-- (void)setBoardCleardBlock:(ZHBoardBoardClearedBlock)boardClearedBlock;
-
 // A callback when the timer ticks
 - (void)setSecondElapsedBlock:(ZHBoardSecondElapsedBlock)secondElapsedBlock;
 
@@ -45,6 +41,10 @@ typedef void (^ZHBoardSecondElapsedBlock)(NSUInteger seconds);
 
 // Validate the game progress
 - (BOOL)validate;
+
+- (void)cheat;
+
+- (void)showBombs;
 
 // Retrieve individual cells.
 - (ZHCell*)cellForKey:(NSString*)key;

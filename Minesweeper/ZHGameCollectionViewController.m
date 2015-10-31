@@ -33,20 +33,26 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    [self.board setCellExplodedBlock:^(ZHCell *cell) {
-        NSLog(@"Cell exploded");
-    }];
-    
-    [self.board setBoardCleardBlock:^{
-        NSLog(@"Board cleared");
-    }];
-    
     __weak typeof(self) welf = self;
+    
+    [self.board setCellExplodedBlock:^(ZHCell *cell) {
+        [welf.board showBombs];
+        [welf refreshUI];
+        
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"BOOM!" message:@"You lose!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"Well obviously..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [welf.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        
+        [welf presentViewController:ac animated:YES completion:NULL];
+    }];
+    
     [self.board setSecondElapsedBlock:^(NSUInteger seconds) {
         welf.timeLabel.text = [NSString stringWithFormat:@"Sec:%lu", (unsigned long)seconds];
     }];
     
-    [self.collectionView reloadData];
+    [self refreshUI];
 }
 
 -(void)refreshUI{
@@ -90,7 +96,7 @@
 - (IBAction)validateButtonTouchUpInside:(id)sender {
     if([self.board validate] == YES){
         NSLog(@"Validated!");
-        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You Win!" message:@"All mines cleared!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You Win!" message:@"All mines discovered!" preferredStyle:UIAlertControllerStyleAlert];
         
         [ac addAction:[UIAlertAction actionWithTitle:@"Woohoo!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];
@@ -98,7 +104,7 @@
         
         [self presentViewController:ac animated:YES completion:NULL];
     } else {
-        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Mines remain..." message:@"Keep trying!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You've got work to do..." message:@"Keep trying!" preferredStyle:UIAlertControllerStyleAlert];
         
         [ac addAction:[UIAlertAction actionWithTitle:@"I will!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         }]];
@@ -108,7 +114,8 @@
 }
 
 - (IBAction)cheatButtonTouchUpInside:(id)sender {
-    
+    [self.board cheat];
+    [self refreshUI];
 }
 
 
@@ -148,7 +155,6 @@
         [self refreshUI];
     }
     
-    NSLog(@"inspect");
 }
 
 @end
