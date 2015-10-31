@@ -8,10 +8,16 @@
 
 #import "ZHOptionsTableViewController.h"
 #import "ZHBoard.h"
-#import "ZHGameViewController.h"
-#import "ZHGameCollectionViewController.h"
+#import "ZHSpriteKitGameViewController.h"
+#import "ZHUIKitGameViewController.h"
 #import "ZHUserDefaults.h"
 #import "ZHTitleHeaderView.h"
+
+typedef enum {
+    ZHRenderTypeUIKit = 0,
+    ZHRenderTypeSpriteKit = 1,
+} ZHRenderType;
+
 
 static NSString *SegueOptionsToGame = @"SegueOptionsToGame";
 static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
@@ -21,6 +27,8 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 @property (weak, nonatomic) IBOutlet UILabel *boardWidthLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *renderTypeSegment;
+
 @end
 
 @interface ZHOptionsTableViewController (UITableViewDelegate) <UITableViewDelegate>
@@ -36,10 +44,10 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueOptionsToGame]){
-        ZHGameViewController *vc = segue.destinationViewController;
+        ZHSpriteKitGameViewController *vc = segue.destinationViewController;
         vc.board = sender;
     } else if([segue.identifier isEqualToString:SegueOptionsToGameCV]){
-        ZHGameCollectionViewController *vc = segue.destinationViewController;
+        ZHUIKitGameViewController *vc = segue.destinationViewController;
         vc.board = sender;
     }
 }
@@ -57,6 +65,8 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     self.mineCountLabel.text = [NSString stringWithFormat:@"%lu",
                                 (unsigned long)mineCount];
 
+    NSUInteger renderType = [ZHUserDefaults renderType];
+    self.renderTypeSegment.selectedSegmentIndex = renderType;
 }
 
 -(NSUInteger)calculateBoardHeight{
@@ -77,13 +87,22 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     [self refreshUI];
 }
 
+- (IBAction)renderTypeSegmentValueChanged:(UISegmentedControl*)sender {
+    [ZHUserDefaults setRenderType:sender.selectedSegmentIndex];
+    [self refreshUI];
+}
+
 - (IBAction)startButtonTouchUpInside:(id)sender {
     NSUInteger mineCount = [ZHUserDefaults mineCount];
     NSUInteger boardWidth = [ZHUserDefaults boardWidth];
     NSUInteger boardHeight = [self calculateBoardHeight];
     ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
-    //[self performSegueWithIdentifier:SegueOptionsToGame sender:board];
-    [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
+    
+    if([ZHUserDefaults renderType] == ZHRenderTypeUIKit){
+        [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
+    } else if([ZHUserDefaults renderType] == ZHRenderTypeSpriteKit){
+        [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
+    }
 }
 
 @end

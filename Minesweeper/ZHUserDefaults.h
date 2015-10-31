@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ZHUserDefaults : NSObject
 
 
@@ -16,5 +17,8 @@
 
 +(NSUInteger)mineCount;
 +(void)setMineCount:(NSUInteger)mineCount;
+
++(NSUInteger)renderType;
++(void)setRenderType:(NSUInteger)renderType;
 
 @end

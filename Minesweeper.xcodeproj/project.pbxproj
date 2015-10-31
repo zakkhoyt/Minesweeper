@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */; };
+		C62B84841BE3E34600D3C444 /* ZHUIKitGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84831BE3E34600D3C444 /* ZHUIKitGameViewController.m */; };
 		C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */; };
 		C62B84901BE4023C00D3C444 /* ZHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */; };
 		C62B84941BE4116700D3C444 /* ZHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84931BE4116700D3C444 /* ZHViewController.m */; };
 		C62B84981BE411CD00D3C444 /* ZHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84971BE411CD00D3C444 /* ZHTableViewController.m */; };
 		C62B849B1BE4193B00D3C444 /* ZHTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */; };
 		C62B849D1BE4194800D3C444 /* ZHTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */; };
+		C62B84A11BE4593C00D3C444 /* ZHCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84A01BE4593C00D3C444 /* ZHCellNode.m */; };
 		C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB791BE3189700FEFAA2 /* main.m */; };
 		C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */; };
 		C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */; };
-		C62DBB821BE3189700FEFAA2 /* ZHGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */; };
-		C62DBB851BE3189700FEFAA2 /* ZHGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */; };
+		C62DBB851BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB841BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m */; };
 		C62DBB881BE3189700FEFAA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB861BE3189700FEFAA2 /* Main.storyboard */; };
 		C62DBB8A1BE3189700FEFAA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB891BE3189700FEFAA2 /* Assets.xcassets */; };
 		C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DBB8B1BE3189700FEFAA2 /* LaunchScreen.storyboard */; };
@@ -27,8 +27,9 @@
 		C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */; };
 		C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
 		C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */; };
-		C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */; };
 		C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */; };
+		C66091301BE54FAE001D5FEE /* UIColor+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */; };
+		C66091351BE560CF001D5FEE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66091341BE560CF001D5FEE /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C62B84821BE3E34600D3C444 /* ZHGameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGameCollectionViewController.h; sourceTree = "<group>"; };
-		C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGameCollectionViewController.m; sourceTree = "<group>"; };
+		C62B84821BE3E34600D3C444 /* ZHUIKitGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUIKitGameViewController.h; sourceTree = "<group>"; };
+		C62B84831BE3E34600D3C444 /* ZHUIKitGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUIKitGameViewController.m; sourceTree = "<group>"; };
 		C62B84881BE3F8D300D3C444 /* ZHCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCellCollectionViewCell.h; sourceTree = "<group>"; };
 		C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCellCollectionViewCell.m; sourceTree = "<group>"; };
 		C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserDefaults.h; sourceTree = "<group>"; };
@@ -62,15 +63,16 @@
 		C62B84991BE4193B00D3C444 /* ZHTitleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTitleHeaderView.h; sourceTree = "<group>"; };
 		C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTitleHeaderView.m; sourceTree = "<group>"; };
 		C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHTitleHeaderView.xib; sourceTree = "<group>"; };
+		C62B849F1BE4593C00D3C444 /* ZHCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCellNode.h; sourceTree = "<group>"; };
+		C62B84A01BE4593C00D3C444 /* ZHCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCellNode.m; sourceTree = "<group>"; };
 		C62DBB751BE3189700FEFAA2 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DBB791BE3189700FEFAA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C62DBB7B1BE3189700FEFAA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C62DBB7C1BE3189700FEFAA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHGameScene.h; sourceTree = "<group>"; };
 		C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGameScene.m; sourceTree = "<group>"; };
-		C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZHGameScene.sks; sourceTree = "<group>"; };
-		C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHGameViewController.h; sourceTree = "<group>"; };
-		C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGameViewController.m; sourceTree = "<group>"; };
+		C62DBB831BE3189700FEFAA2 /* ZHSpriteKitGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSpriteKitGameViewController.h; sourceTree = "<group>"; };
+		C62DBB841BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSpriteKitGameViewController.m; sourceTree = "<group>"; };
 		C62DBB871BE3189700FEFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C62DBB891BE3189700FEFAA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C62DBB8C1BE3189700FEFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,10 +88,11 @@
 		C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBoard.h; sourceTree = "<group>"; };
 		C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBoard.m; sourceTree = "<group>"; };
 		C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
-		C62DBBBC1BE31A8600FEFAA2 /* SKScene+Unarchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKScene+Unarchive.h"; sourceTree = "<group>"; };
-		C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Unarchive.m"; sourceTree = "<group>"; };
 		C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHOptionsTableViewController.h; sourceTree = "<group>"; };
 		C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOptionsTableViewController.m; sourceTree = "<group>"; };
+		C660912E1BE54FAE001D5FEE /* UIColor+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZH.h"; sourceTree = "<group>"; };
+		C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZH.m"; sourceTree = "<group>"; };
+		C66091341BE560CF001D5FEE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +123,8 @@
 		C62B848B1BE3F8DB00D3C444 /* Game (collection view) */ = {
 			isa = PBXGroup;
 			children = (
-				C62B84821BE3E34600D3C444 /* ZHGameCollectionViewController.h */,
-				C62B84831BE3E34600D3C444 /* ZHGameCollectionViewController.m */,
+				C62B84821BE3E34600D3C444 /* ZHUIKitGameViewController.h */,
+				C62B84831BE3E34600D3C444 /* ZHUIKitGameViewController.m */,
 				C62B84911BE404F900D3C444 /* Cell */,
 			);
 			name = "Game (collection view)";
@@ -130,11 +133,9 @@
 		C62B848C1BE3F8E600D3C444 /* Game (spritekit) */ = {
 			isa = PBXGroup;
 			children = (
-				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
-				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
-				C62DBB841BE3189700FEFAA2 /* ZHGameViewController.m */,
-				C62DBB811BE3189700FEFAA2 /* ZHGameScene.sks */,
-				C62DBB831BE3189700FEFAA2 /* ZHGameViewController.h */,
+				C62B84A21BE459DE00D3C444 /* Scenes */,
+				C62DBB831BE3189700FEFAA2 /* ZHSpriteKitGameViewController.h */,
+				C62DBB841BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m */,
 			);
 			name = "Game (spritekit)";
 			sourceTree = "<group>";
@@ -142,6 +143,7 @@
 		C62B848D1BE3F8EE00D3C444 /* Options */ = {
 			isa = PBXGroup;
 			children = (
+				C62B849E1BE4194C00D3C444 /* Header */,
 				C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */,
 				C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */,
 			);
@@ -168,14 +170,33 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
-		C62B849E1BE4194C00D3C444 /* View */ = {
+		C62B849E1BE4194C00D3C444 /* Header */ = {
 			isa = PBXGroup;
 			children = (
 				C62B84991BE4193B00D3C444 /* ZHTitleHeaderView.h */,
 				C62B849A1BE4193B00D3C444 /* ZHTitleHeaderView.m */,
 				C62B849C1BE4194800D3C444 /* ZHTitleHeaderView.xib */,
 			);
-			name = View;
+			name = Header;
+			sourceTree = "<group>";
+		};
+		C62B84A21BE459DE00D3C444 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C62B84A31BE459E300D3C444 /* Nodes */,
+				C62DBB7E1BE3189700FEFAA2 /* ZHGameScene.h */,
+				C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		C62B84A31BE459E300D3C444 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				C62B849F1BE4593C00D3C444 /* ZHCellNode.h */,
+				C62B84A01BE4593C00D3C444 /* ZHCellNode.m */,
+			);
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 		C62DBB6C1BE3189700FEFAA2 = {
@@ -206,7 +227,6 @@
 				C62DBBB91BE31A3200FEFAA2 /* Model */,
 				C62DBB781BE3189700FEFAA2 /* Supporting Files */,
 				C62DBBBA1BE31A3E00FEFAA2 /* UserInterface */,
-				C62B849E1BE4194C00D3C444 /* View */,
 				C62DBBBB1BE31A4800FEFAA2 /* ViewControllers */,
 			);
 			path = Minesweeper;
@@ -245,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */,
+				C66091341BE560CF001D5FEE /* README.txt */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -252,12 +273,8 @@
 		C62DBBB91BE31A3200FEFAA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C62DBBB01BE318AF00FEFAA2 /* ZHCell.h */,
-				C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */,
-				C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */,
-				C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */,
-				C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */,
-				C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */,
+				C66091321BE55D9F001D5FEE /* Game */,
+				C66091331BE55DA4001D5FEE /* UserDefaults */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -286,10 +303,30 @@
 		C62DBBBF1BE31AA200FEFAA2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				C62DBBBC1BE31A8600FEFAA2 /* SKScene+Unarchive.h */,
-				C62DBBBD1BE31A8600FEFAA2 /* SKScene+Unarchive.m */,
+				C660912E1BE54FAE001D5FEE /* UIColor+ZH.h */,
+				C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		C66091321BE55D9F001D5FEE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C62DBBB01BE318AF00FEFAA2 /* ZHCell.h */,
+				C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */,
+				C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */,
+				C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		C66091331BE55DA4001D5FEE /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				C62B848E1BE4023C00D3C444 /* ZHUserDefaults.h */,
+				C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */,
+			);
+			name = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,10 +433,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62B849D1BE4194800D3C444 /* ZHTitleHeaderView.xib in Resources */,
-				C62DBB821BE3189700FEFAA2 /* ZHGameScene.sks in Resources */,
 				C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */,
 				C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */,
 				C62DBB8A1BE3189700FEFAA2 /* Assets.xcassets in Resources */,
+				C66091351BE560CF001D5FEE /* README.txt in Resources */,
 				C62DBB881BE3189700FEFAA2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */,
-				C62DBB851BE3189700FEFAA2 /* ZHGameViewController.m in Sources */,
+				C66091301BE54FAE001D5FEE /* UIColor+ZH.m in Sources */,
+				C62DBB851BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m in Sources */,
 				C62DBB7D1BE3189700FEFAA2 /* AppDelegate.m in Sources */,
 				C62DBB801BE3189700FEFAA2 /* ZHGameScene.m in Sources */,
 				C62B848A1BE3F8D300D3C444 /* ZHCellCollectionViewCell.m in Sources */,
@@ -437,8 +475,8 @@
 				C62B84981BE411CD00D3C444 /* ZHTableViewController.m in Sources */,
 				C62DBB7A1BE3189700FEFAA2 /* main.m in Sources */,
 				C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */,
-				C62B84841BE3E34600D3C444 /* ZHGameCollectionViewController.m in Sources */,
-				C62DBBBE1BE31A8600FEFAA2 /* SKScene+Unarchive.m in Sources */,
+				C62B84A11BE4593C00D3C444 /* ZHCellNode.m in Sources */,
+				C62B84841BE3E34600D3C444 /* ZHUIKitGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

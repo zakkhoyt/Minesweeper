@@ -6,29 +6,28 @@
 //  Copyright © 2015 Zakk Hoyt. All rights reserved.
 //
 
-#import "ZHGameCollectionViewController.h"
+#import "ZHUIKitGameViewController.h"
 #import "ZHBoard.h"
 #import "ZHCellCollectionViewCell.h"
 
-@interface ZHGameCollectionViewController ()
+@interface ZHUIKitGameViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UILabel *roundsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
-@interface ZHGameCollectionViewController (UICollectionViewDataSource) <UICollectionViewDataSource>
+@interface ZHUIKitGameViewController (UICollectionViewDataSource) <UICollectionViewDataSource>
 @end
 
-@interface ZHGameCollectionViewController (UICollectionViewDelegateFlowLayout) <UICollectionViewDelegateFlowLayout>
+@interface ZHUIKitGameViewController (UICollectionViewDelegateFlowLayout) <UICollectionViewDelegateFlowLayout>
 @end
 
-@interface ZHGameCollectionViewController (UICollectionViewDelegate) <UICollectionViewDelegate>
+@interface ZHUIKitGameViewController (UICollectionViewDelegate) <UICollectionViewDelegate>
 @end
 
-@implementation ZHGameCollectionViewController
+@implementation ZHUIKitGameViewController
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -41,8 +40,12 @@
         
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"BOOM!" message:@"You lose!" preferredStyle:UIAlertControllerStyleAlert];
         
-        [ac addAction:[UIAlertAction actionWithTitle:@"Well obviously..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [ac addAction:[UIAlertAction actionWithTitle:@"New Game" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [welf.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"Stay and learn" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
         }]];
         
         [welf presentViewController:ac animated:YES completion:NULL];
@@ -62,20 +65,6 @@
     self.timeLabel.text = [NSString stringWithFormat:@"Sec:%lu", (unsigned long)self.board.secondsCount];
 }
 
-@end
-
-@implementation ZHGameCollectionViewController (UICollectionViewDataSource)
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.board.size.width * self.board.size.height;
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ZHCellCollectionViewCell *cell = [collectionView  dequeueReusableCellWithReuseIdentifier:@"ZHCellCollectionViewCell" forIndexPath:indexPath];
-    cell.cell = [self.board cellForIndexPath:indexPath];
-    return cell;
-}
 
 #pragma mark IBActions
 
@@ -90,17 +79,29 @@
     }]];
     
     [self presentViewController:ac animated:YES completion:NULL];
-
+    
 }
 
 - (IBAction)validateButtonTouchUpInside:(id)sender {
     if([self.board validate] == YES){
         NSLog(@"Validated!");
-        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You Win!" message:@"All mines discovered!" preferredStyle:UIAlertControllerStyleAlert];
         
-        [ac addAction:[UIAlertAction actionWithTitle:@"Woohoo!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *message = nil;
+        if(self.board.cheatCount > 0){
+            message = [NSString stringWithFormat:@"But not really because you cheated %lu times. All mines \"discovered\"!", (unsigned long)self.board.cheatCount];
+        } else {
+            message = @"All mines discovered!";
+        }
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"You Win!" message:message preferredStyle:UIAlertControllerStyleAlert];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"New Game" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
+        
+        [ac addAction:[UIAlertAction actionWithTitle:@"Stay and learn" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        
         
         [self presentViewController:ac animated:YES completion:NULL];
     } else {
@@ -119,13 +120,26 @@
 }
 
 
+@end
 
+@implementation ZHUIKitGameViewController (UICollectionViewDataSource)
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.board.size.width * self.board.size.height;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ZHCellCollectionViewCell *cell = [collectionView  dequeueReusableCellWithReuseIdentifier:@"ZHCellCollectionViewCell" forIndexPath:indexPath];
+    cell.cell = [self.board cellForIndexPath:indexPath];
+    return cell;
+}
 
 @end
 
 
 
-@implementation ZHGameCollectionViewController (UICollectionViewDelegateFlowLayout)
+@implementation ZHUIKitGameViewController (UICollectionViewDelegateFlowLayout)
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat width = collectionView.bounds.size.width / self.board.size.width;
     CGFloat height = collectionView.bounds.size.height / self.board.size.height;
@@ -146,13 +160,16 @@
 
 @end
 
-@implementation ZHGameCollectionViewController (UICollectionViewDelegate)
+@implementation ZHUIKitGameViewController (UICollectionViewDelegate)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     ZHCell *cell = [self.board cellForIndexPath:indexPath];
     if(cell.isPlayed == NO){
         self.board.roundCount++;
-        [self.board exposeCell:cell];
-        [self refreshUI];
+//        [self.board exposeCell:cell];
+        [self.board playCell:cell completionBlock:^{
+            [self refreshUI];
+        }];
+        
     }
     
 }

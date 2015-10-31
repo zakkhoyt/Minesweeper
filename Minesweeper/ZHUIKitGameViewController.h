@@ -9,6 +9,6 @@
 #import "ZHViewController.h"
 @class ZHBoard;
 
-@interface ZHGameCollectionViewController : ZHViewController
+@interface ZHUIKitGameViewController : ZHViewController
 @property (nonatomic, strong) ZHBoard *board;
 @end

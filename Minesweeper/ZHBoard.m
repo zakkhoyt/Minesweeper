@@ -14,6 +14,7 @@
 @property (nonatomic, strong) ZHBoardSecondElapsedBlock secondElapsedBlock;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSTimer *secondsTimer;
+@property (nonatomic) NSUInteger cheatCount;
 @end
 
 @implementation ZHBoard
@@ -42,6 +43,18 @@
     }
     return [[NSDate date] timeIntervalSinceDate:self.startDate];
 }
+
+
+- (void)playCell:(ZHCell*)cell completionBlock:(ZHBoardCellEmptyBlock)completionBlock{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self exposeCell:cell];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock();
+        });
+    });
+}
+
+
 
 - (void)exposeCell:(ZHCell*)cell{
     // Start tracking time
@@ -90,6 +103,7 @@
 }
 
 - (void)cheat{
+    self.cheatCount++;
     [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
         if(cell.isBomb == NO &&
            cell.isPlayed == NO){
@@ -97,9 +111,11 @@
             *stop = YES;
         }
     }];
-    
 }
 
+-(NSUInteger)cheatCount{
+    return _cheatCount;
+}
 
 - (void)showBombs{
     [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {

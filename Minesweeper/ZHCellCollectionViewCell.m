@@ -8,6 +8,7 @@
 
 #import "ZHCellCollectionViewCell.h"
 #import "ZHCell.h"
+#import "UIColor+ZH.h"
 
 @interface ZHCellCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *adjacentBombCountLabel;
@@ -19,24 +20,22 @@
 -(void)setCell:(ZHCell *)cell{
     _cell = cell;
     if(cell.isPlayed == YES){
-        self.backgroundColor = [UIColor cyanColor];
+        self.backgroundColor = [UIColor zhPlayedColor];
         if(cell.adjacentBombCount == 0){
             self.adjacentBombCountLabel.text = @"";
         } else {
             self.adjacentBombCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
         }
-//        self.layer.borderWidth = 0.0;
-
     } else {
         self.adjacentBombCountLabel.text = @"";
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor zhUnplayedColor];
         self.layer.borderWidth = 1.0;
-        self.layer.borderColor = [UIColor greenColor].CGColor;
+        self.layer.borderColor = [UIColor zhGridColor].CGColor;
     }
     
     self.mineImageView.hidden = YES;
     if(cell.isBomb == YES && cell.bombVisible){
-        self.backgroundColor = [UIColor colorWithRed:0.3 green:0 blue:0 alpha:1];
+        self.backgroundColor = [UIColor zhMineColor];
         self.mineImageView.hidden = NO;
     }
 }

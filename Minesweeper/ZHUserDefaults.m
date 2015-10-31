@@ -39,4 +39,18 @@ static NSString *ZHUserDefaultsMineCount = @"ZHUserDefaultsMineCount";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+static NSString *ZHUserDefaultsRenderType = @"ZHUserDefaultsRenderType";
++(NSUInteger)renderType{
+    NSNumber *num = [[NSUserDefaults standardUserDefaults] objectForKey:ZHUserDefaultsRenderType];
+    if(num == nil){
+        return 0;
+    }
+    return num.unsignedIntegerValue;
+    
+}
++(void)setRenderType:(NSUInteger)renderType{
+    [[NSUserDefaults standardUserDefaults] setObject:@(renderType) forKey:ZHUserDefaultsRenderType];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

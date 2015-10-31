@@ -10,6 +10,6 @@
 
 @class ZHBoard;
 
-@interface ZHGameViewController : ZHViewController
+@interface ZHSpriteKitGameViewController : ZHViewController
 @property (nonatomic, strong) ZHBoard *board;
 @end
