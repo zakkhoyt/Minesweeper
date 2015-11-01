@@ -124,7 +124,7 @@
                     labelNode.name = @"labelNode";
                     labelNode.xScale = 1.5;
                     labelNode.yScale = 1.0;
-                    labelNode.fontSize = 6;
+                    labelNode.fontSize = 8;
                     labelNode.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
                     labelNode.fontColor = [UIColor zhTextColor];
                     labelNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
