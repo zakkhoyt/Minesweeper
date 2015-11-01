@@ -141,10 +141,10 @@
             if(cell.isBomb == YES && cell.bombVisible){
                 cellNode.fillColor = [UIColor zhMineColor];
                 SKSpriteNode *mineNode = [SKSpriteNode spriteNodeWithImageNamed:@"mine"];
-                mineNode.name = @"mindNode";
-                mineNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
+                mineNode.name = @"mineNode";
+                mineNode.position = cellNode.position;
                 mineNode.size = CGSizeMake(xSpacing, ySpacing);
-                [self addChild:mineNode];
+                [cellNode addChild:mineNode];
             }
         }
     }
