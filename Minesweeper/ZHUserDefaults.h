@@ -21,4 +21,7 @@
 +(NSUInteger)renderType;
 +(void)setRenderType:(NSUInteger)renderType;
 
++(BOOL)renderGrid;
++(void)setRenderGrid:(BOOL)renderGrid;
+
 @end

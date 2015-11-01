@@ -346,19 +346,27 @@
                                                     </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWk-Rc-QPe">
-                                                    <rect key="frame" x="8" y="11" width="237" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="237" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUy-bc-JwM">
-                                                    <rect key="frame" x="355" y="11" width="237" height="21"/>
+                                                    <rect key="frame" x="355" y="11" width="237" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1n-hy-MNw">
+                                                    <rect key="frame" x="355" y="7" width="36" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Level"/>
+                                                    <connections>
+                                                        <action selector="levelButtonTouchUpInside:" destination="vpd-VR-Wjq" eventType="touchUpInside" id="a2s-bO-QEY"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -367,6 +375,8 @@
                                                 <constraint firstItem="VUY-hP-Qza" firstAttribute="centerX" secondItem="G7w-2f-HH4" secondAttribute="centerX" id="Ap3-uE-42z"/>
                                                 <constraint firstItem="qWk-Rc-QPe" firstAttribute="centerY" secondItem="G7w-2f-HH4" secondAttribute="centerY" id="Zaa-mh-eeQ"/>
                                                 <constraint firstItem="qWk-Rc-QPe" firstAttribute="leading" secondItem="G7w-2f-HH4" secondAttribute="leadingMargin" id="aJp-Fj-W28"/>
+                                                <constraint firstItem="g1n-hy-MNw" firstAttribute="centerY" secondItem="G7w-2f-HH4" secondAttribute="centerY" id="eZJ-Eo-Jei"/>
+                                                <constraint firstItem="g1n-hy-MNw" firstAttribute="leading" secondItem="VUY-hP-Qza" secondAttribute="trailing" constant="8" id="f6D-nj-9Ka"/>
                                                 <constraint firstItem="VUY-hP-Qza" firstAttribute="centerY" secondItem="G7w-2f-HH4" secondAttribute="centerY" id="it7-zT-Lfq"/>
                                                 <constraint firstItem="LUy-bc-JwM" firstAttribute="centerY" secondItem="G7w-2f-HH4" secondAttribute="centerY" id="jrN-8i-qmp"/>
                                                 <constraint firstItem="VUY-hP-Qza" firstAttribute="leading" secondItem="qWk-Rc-QPe" secondAttribute="trailing" constant="8" id="kLX-04-kRx"/>
@@ -375,8 +385,39 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Zu5-9V-U4s">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Gbh-aP-LQV">
                                         <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gbh-aP-LQV" id="0i6-vc-hDr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ark-c9-a1f">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <animations/>
+                                                    <connections>
+                                                        <action selector="gridSwitchValueChanged:" destination="vpd-VR-Wjq" eventType="valueChanged" id="oVr-Ef-aPA"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQv-yl-iAu">
+                                                    <rect key="frame" x="8" y="11" width="237" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="ark-c9-a1f" firstAttribute="trailing" secondItem="0i6-vc-hDr" secondAttribute="trailingMargin" id="Lp4-vx-1Am"/>
+                                                <constraint firstItem="ark-c9-a1f" firstAttribute="centerY" secondItem="0i6-vc-hDr" secondAttribute="centerY" id="aQC-Rs-nf6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Zu5-9V-U4s">
+                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zu5-9V-U4s" id="Z6d-Pg-MU7">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -405,15 +446,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5Nj-8k-Yvz">
-                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Nj-8k-Yvz" id="pXJ-CU-OrR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-2R-zOr">
-                                                    <rect key="frame" x="283" y="7" width="34" height="30"/>
+                                                    <rect key="frame" x="8" y="4" width="584" height="36"/>
                                                     <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Start"/>
                                                     <connections>
                                                         <action selector="startButtonTouchUpInside:" destination="vpd-VR-Wjq" eventType="touchUpInside" id="bH0-bm-Cbp"/>
@@ -422,8 +464,9 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="iwT-2R-zOr" firstAttribute="centerX" secondItem="pXJ-CU-OrR" secondAttribute="centerX" id="2vp-bY-aWu"/>
-                                                <constraint firstItem="iwT-2R-zOr" firstAttribute="centerY" secondItem="pXJ-CU-OrR" secondAttribute="centerY" id="7K8-cm-8gO"/>
+                                                <constraint firstItem="iwT-2R-zOr" firstAttribute="centerY" secondItem="pXJ-CU-OrR" secondAttribute="centerY" id="kdA-ts-sDX"/>
+                                                <constraint firstItem="iwT-2R-zOr" firstAttribute="trailing" secondItem="pXJ-CU-OrR" secondAttribute="trailingMargin" id="spp-MQ-NVq"/>
+                                                <constraint firstItem="iwT-2R-zOr" firstAttribute="leading" secondItem="pXJ-CU-OrR" secondAttribute="leadingMargin" id="u0E-9I-25c"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -441,6 +484,7 @@
                     <connections>
                         <outlet property="boardWidthLabel" destination="Idj-i5-qCT" id="hkE-py-ATc"/>
                         <outlet property="boardWidthStepper" destination="Tr6-zv-EXK" id="X1F-nM-NPO"/>
+                        <outlet property="gridSwitch" destination="ark-c9-a1f" id="bAO-Il-UJ7"/>
                         <outlet property="mineCountLabel" destination="LUy-bc-JwM" id="U77-2O-7BW"/>
                         <outlet property="mineCountStepper" destination="VUY-hP-Qza" id="4Q0-Z3-7ei"/>
                         <outlet property="renderTypeSegment" destination="wle-2h-44b" id="xby-J5-TYm"/>

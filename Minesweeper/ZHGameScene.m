@@ -22,7 +22,9 @@
     
     // Render cells then grid
     [self renderCells];
-    [self renderGrid];
+    if(self.board.grid == YES){
+        [self renderGrid];
+    }
 }
 
 
@@ -47,7 +49,6 @@
                 
                 if(cell.isPlayed == NO){
                     self.board.roundCount++;
-//                    [self.board exposeCell:cell];
                     [self.board playCell:cell completionBlock:^{
                         [self renderBoard];                
                     }];
@@ -56,7 +57,6 @@
                 }
             }
         }];
-        
     }];
 }
 
@@ -111,12 +111,13 @@
             ZHCellNode *cellNode = [ZHCellNode shapeNodeWithPath:path];
             cellNode.cell = cell;
             cellNode.name = @"cellNode";
+            cellNode.strokeColor = [UIColor clearColor];
             [self addChild:cellNode];
             
             // Set cell color and text
             if(cell.isPlayed == YES){
                 cellNode.fillColor = [UIColor zhPlayedColor];
-                cellNode.strokeColor = [UIColor clearColor];
+//                cellNode.strokeColor = [UIColor clearColor];
                 if(cell.adjacentBombCount > 0){
                     // Add a label
                     SKLabelNode *labelNode = [[SKLabelNode alloc]initWithFontNamed:@"Halvetica"];
@@ -133,7 +134,7 @@
                 }
             } else {
                 cellNode.fillColor = [UIColor zhUnplayedColor];
-                cellNode.strokeColor = [UIColor zhGridColor];
+             //   cellNode.strokeColor = [UIColor zhGridColor];
             }
             
             // If mine, render mine

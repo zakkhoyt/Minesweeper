@@ -22,6 +22,9 @@ typedef void (^ZHBoardSecondElapsedBlock)(NSUInteger seconds);
 // The number of mines on the board
 @property (nonatomic) NSUInteger mineCount;
 
+// Show or hide grid
+@property (nonatomic) BOOL grid;
+
 // Number of rounds that have elapsed
 @property (nonatomic) NSUInteger roundCount;
 

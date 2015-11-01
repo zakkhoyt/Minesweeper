@@ -66,7 +66,9 @@
     // If cell is a bomb, game over
     if(cell.isBomb == YES) {
         if(self.cellExplodedBlock){
-            self.cellExplodedBlock(cell);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.cellExplodedBlock(cell);
+            });
             return;
         }
     }

@@ -1,3 +1,10 @@
 
 // Game description
 https://www.thumbtack.com/challenges/minesweeper
+
+
+font size
+draw once
+
+grid option
+difficulty

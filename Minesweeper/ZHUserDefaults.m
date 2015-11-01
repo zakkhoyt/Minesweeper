@@ -53,4 +53,15 @@ static NSString *ZHUserDefaultsRenderType = @"ZHUserDefaultsRenderType";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+static NSString *ZHUserDefaultsRenderGrid = @"ZHUserDefaultsRenderGrid";
++(BOOL)renderGrid{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:ZHUserDefaultsRenderGrid];
+}
+
++(void)setRenderGrid:(BOOL)renderGrid{
+    [[NSUserDefaults standardUserDefaults] setBool:renderGrid forKey:ZHUserDefaultsRenderGrid];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 @end

@@ -28,7 +28,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 @property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *renderTypeSegment;
-
+@property (weak, nonatomic) IBOutlet UISwitch *gridSwitch;
 @end
 
 @interface ZHOptionsTableViewController (UITableViewDelegate) <UITableViewDelegate>
@@ -67,6 +67,8 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
     NSUInteger renderType = [ZHUserDefaults renderType];
     self.renderTypeSegment.selectedSegmentIndex = renderType;
+    
+    self.gridSwitch.on = [ZHUserDefaults renderGrid];
 }
 
 -(NSUInteger)calculateBoardHeight{
@@ -87,6 +89,49 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     [self refreshUI];
 }
 
+- (IBAction)gridSwitchValueChanged:(UISwitch *)sender {
+    [ZHUserDefaults setRenderGrid:sender.on];
+    [self refreshUI];
+}
+
+- (IBAction)levelButtonTouchUpInside:(UIButton*)sender {
+    __weak typeof(self) welf = self;
+    
+    void (^setLevel)(NSUInteger level) = ^(NSUInteger level){
+        NSUInteger mineCount = self.boardWidthStepper.value * level;
+        [ZHUserDefaults setMineCount:mineCount];
+        [self refreshUI];
+    };
+    
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Difficulty" message:@"How good of a minesweeper are you? Select a difficulty level or cancel and set the number manually." preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Easy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        setLevel(1);
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Medium" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        setLevel(2);
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Hard" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        setLevel(3);
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Expert" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        setLevel(5);
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Stud" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        setLevel(8);
+    }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [welf presentViewController:ac animated:YES completion:NULL];
+}
+
 - (IBAction)renderTypeSegmentValueChanged:(UISegmentedControl*)sender {
     [ZHUserDefaults setRenderType:sender.selectedSegmentIndex];
     [self refreshUI];
@@ -97,7 +142,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     NSUInteger boardWidth = [ZHUserDefaults boardWidth];
     NSUInteger boardHeight = [self calculateBoardHeight];
     ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
-    
+    board.grid = self.gridSwitch.on;
     if([ZHUserDefaults renderType] == ZHRenderTypeUIKit){
         [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
     } else if([ZHUserDefaults renderType] == ZHRenderTypeSpriteKit){
