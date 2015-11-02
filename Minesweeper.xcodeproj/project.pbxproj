@@ -26,10 +26,9 @@
 		C62DBBA31BE3189700FEFAA2 /* MinesweeperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBA21BE3189700FEFAA2 /* MinesweeperUITests.m */; };
 		C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */; };
 		C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
-		C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */; };
 		C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */; };
 		C66091301BE54FAE001D5FEE /* UIColor+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */; };
-		C66091351BE560CF001D5FEE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66091341BE560CF001D5FEE /* README.txt */; };
+		C66091851BE80A06001D5FEE /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = C66091841BE80A06001D5FEE /* Documents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,12 +86,11 @@
 		C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCell.m; sourceTree = "<group>"; };
 		C62DBBB31BE3193300FEFAA2 /* ZHBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBoard.h; sourceTree = "<group>"; };
 		C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBoard.m; sourceTree = "<group>"; };
-		C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
 		C62DBBC01BE31B1900FEFAA2 /* ZHOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHOptionsTableViewController.h; sourceTree = "<group>"; };
 		C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOptionsTableViewController.m; sourceTree = "<group>"; };
 		C660912E1BE54FAE001D5FEE /* UIColor+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZH.h"; sourceTree = "<group>"; };
 		C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZH.m"; sourceTree = "<group>"; };
-		C66091341BE560CF001D5FEE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C66091841BE80A06001D5FEE /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				C62DBBBF1BE31AA200FEFAA2 /* Categories */,
-				C62DBBB81BE31A2B00FEFAA2 /* Documents */,
+				C66091841BE80A06001D5FEE /* Documents */,
 				C62DBBB91BE31A3200FEFAA2 /* Model */,
 				C62DBB781BE3189700FEFAA2 /* Supporting Files */,
 				C62DBBBA1BE31A3E00FEFAA2 /* UserInterface */,
@@ -259,15 +257,6 @@
 				C62DBBA41BE3189700FEFAA2 /* Info.plist */,
 			);
 			path = MinesweeperUITests;
-			sourceTree = "<group>";
-		};
-		C62DBBB81BE31A2B00FEFAA2 /* Documents */ = {
-			isa = PBXGroup;
-			children = (
-				C62DBBB61BE31A1F00FEFAA2 /* requirements.txt */,
-				C66091341BE560CF001D5FEE /* README.txt */,
-			);
-			name = Documents;
 			sourceTree = "<group>";
 		};
 		C62DBBB91BE31A3200FEFAA2 /* Model */ = {
@@ -433,11 +422,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62B849D1BE4194800D3C444 /* ZHTitleHeaderView.xib in Resources */,
-				C62DBBB71BE31A1F00FEFAA2 /* requirements.txt in Resources */,
 				C62DBB8D1BE3189700FEFAA2 /* LaunchScreen.storyboard in Resources */,
 				C62DBB8A1BE3189700FEFAA2 /* Assets.xcassets in Resources */,
-				C66091351BE560CF001D5FEE /* README.txt in Resources */,
 				C62DBB881BE3189700FEFAA2 /* Main.storyboard in Resources */,
+				C66091851BE80A06001D5FEE /* Documents in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

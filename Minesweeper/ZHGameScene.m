@@ -43,7 +43,8 @@
         
         // Ensure we get the cellNode, not the gridNode
         [nodes enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL * _Nonnull stop) {
-            if([node.name isEqualToString:@"cellNode"]){
+//            if([node.name isEqualToString:@"cellNode"]){
+            if([node.name rangeOfString:@"cellNode"].location != NSNotFound){
                 ZHCellNode *cellNode = (ZHCellNode*)node;
                 ZHCell *cell = cellNode.cell;
                 
@@ -110,7 +111,7 @@
             // Create node to contain cell
             ZHCellNode *cellNode = [ZHCellNode shapeNodeWithPath:path];
             cellNode.cell = cell;
-            cellNode.name = @"cellNode";
+            cellNode.name = [NSString stringWithFormat:@"cellNode:%@", cell.key];
             cellNode.strokeColor = [UIColor clearColor];
             [self addChild:cellNode];
             
@@ -141,7 +142,7 @@
             if(cell.isBomb == YES && cell.bombVisible){
                 cellNode.fillColor = [UIColor zhMineColor];
                 SKSpriteNode *mineNode = [SKSpriteNode spriteNodeWithImageNamed:@"mine"];
-                mineNode.name = @"mindNode";
+                mineNode.name = @"mineNode";
                 mineNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
                 mineNode.size = CGSizeMake(xSpacing, ySpacing);
                 [self addChild:mineNode];

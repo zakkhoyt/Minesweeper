@@ -20,7 +20,7 @@
 -(void)setCell:(ZHCell *)cell{
     _cell = cell;
     if(cell.isPlayed == YES){
-        self.backgroundColor = [UIColor zhPlayedColor];
+        self.backgroundColor = cell.isCheat ? [UIColor zhCheatColor] : [UIColor zhPlayedColor];
         if(cell.adjacentBombCount == 0){
             self.adjacentBombCountLabel.text = @"";
         } else {
@@ -29,6 +29,7 @@
     } else {
         self.adjacentBombCountLabel.text = @"";
         self.backgroundColor = [UIColor zhUnplayedColor];
+        
         self.layer.borderWidth = 1.0;
         self.layer.borderColor = [UIColor zhGridColor].CGColor;
     }

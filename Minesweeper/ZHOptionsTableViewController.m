@@ -142,7 +142,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     NSUInteger boardWidth = [ZHUserDefaults boardWidth];
     NSUInteger boardHeight = [self calculateBoardHeight];
     ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
-    board.grid = self.gridSwitch.on;
+    board.grid = YES;
     if([ZHUserDefaults renderType] == ZHRenderTypeUIKit){
         [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
     } else if([ZHUserDefaults renderType] == ZHRenderTypeSpriteKit){

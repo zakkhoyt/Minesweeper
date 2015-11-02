@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSTimer *secondsTimer;
 @property (nonatomic) NSUInteger cheatCount;
+@property (nonatomic, strong) dispatch_queue_t serialBGQueue;
 @end
 
 @implementation ZHBoard
@@ -24,6 +25,7 @@
     if (self) {
         _size = size;
         _mineCount = mineCount;
+        _serialBGQueue = dispatch_queue_create("ZHBoardQueue", DISPATCH_QUEUE_SERIAL);
         [self generateCells];
     }
     return self;
@@ -46,7 +48,7 @@
 
 
 - (void)playCell:(ZHCell*)cell completionBlock:(ZHBoardCellEmptyBlock)completionBlock{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(_serialBGQueue, ^{
         [self exposeCell:cell];
         dispatch_async(dispatch_get_main_queue(), ^{
             completionBlock();
@@ -83,6 +85,7 @@
             adjacentBombCount++;
         }
     }];
+
     if(adjacentBombCount == 0){
         [neighborCells enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
             if(cell.isPlayed == NO){
@@ -238,14 +241,18 @@
         }
     }
     
-    for(NSUInteger index = 0; index <= _mineCount; index++){
+    NSUInteger mineCount = 0;
+    while(mineCount < _mineCount){
         NSUInteger x = arc4random() % (NSUInteger)self.size.width;
         NSUInteger y = arc4random() % (NSUInteger)self.size.height;
         NSString *key = [ZHCell keyFromX:x Y:y];
         ZHCell *cell = self.cells[key];
-        // TODO: Check to see if it's already a bomb and try again
-        cell.isBomb = YES;
-        NSLog(@"Set bomb at %@", key);
+
+        if(cell.isBomb == NO){
+            cell.isBomb = YES;
+            mineCount++;
+            NSLog(@"Set bomb at %@", key);
+        }
     }
 }
 

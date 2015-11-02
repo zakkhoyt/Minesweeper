@@ -14,8 +14,6 @@
     return [NSString stringWithFormat:@"x%lu:y%lu", (unsigned long)x, (unsigned long)y];
 }
 
-
-
 - (instancetype)initWithX:(NSUInteger)x Y:(NSUInteger)y {
     self = [super init];
     if (self) {
