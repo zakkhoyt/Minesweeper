@@ -109,6 +109,7 @@
     [self.cells.allValues enumerateObjectsUsingBlock:^(ZHCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
         if(cell.isBomb == NO &&
            cell.isPlayed == NO){
+            cell.isCheat = YES;
             [self exposeCell:cell];
             *stop = YES;
         }

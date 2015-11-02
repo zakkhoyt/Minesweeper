@@ -13,6 +13,7 @@
 +(UIColor*)zhGridColor;
 +(UIColor*)zhUnplayedColor;
 +(UIColor*)zhPlayedColor;
++(UIColor*)zhCheatColor;
 +(UIColor*)zhMineColor;
 +(UIColor*)zhTextColor;
 

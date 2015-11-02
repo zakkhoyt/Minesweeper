@@ -20,5 +20,5 @@
 @property (nonatomic) BOOL bombVisible;
 @property (nonatomic) BOOL isPlayed;
 @property (nonatomic) NSUInteger adjacentBombCount;
-
+@property (nonatomic) BOOL isCheat;
 @end

@@ -116,7 +116,7 @@
             
             // Set cell color and text
             if(cell.isPlayed == YES){
-                cellNode.fillColor = [UIColor zhPlayedColor];
+                cellNode.fillColor = cell.isCheat ? [UIColor zhCheatColor] : [UIColor zhPlayedColor];
 //                cellNode.strokeColor = [UIColor clearColor];
                 if(cell.adjacentBombCount > 0){
                     // Add a label

@@ -22,6 +22,10 @@
     return [UIColor whiteColor];
 }
 
++(UIColor*)zhCheatColor{
+    return [UIColor orangeColor];
+}
+
 +(UIColor*)zhMineColor{
     return [UIColor colorWithRed:0.3 green:0 blue:0 alpha:1];
 }
