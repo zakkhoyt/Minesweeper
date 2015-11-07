@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MinesweeperTVOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>C62DBB9D1BE3189700FEFAA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C66091B21BED7B8B001D5FEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C66091C71BED7B8B001D5FEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

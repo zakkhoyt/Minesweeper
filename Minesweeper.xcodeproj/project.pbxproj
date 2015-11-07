@@ -27,8 +27,22 @@
 		C62DBBB21BE318AF00FEFAA2 /* ZHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */; };
 		C62DBBB51BE3193300FEFAA2 /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
 		C62DBBC21BE31B1900FEFAA2 /* ZHOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBC11BE31B1900FEFAA2 /* ZHOptionsTableViewController.m */; };
+		C6592B731BEE8901008FFBE2 /* ZHTVOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66091BC1BED7B8B001D5FEE /* ZHTVOptionsViewController.m */; };
+		C6592B741BEE8AE2008FFBE2 /* ZHUIKitGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84831BE3E34600D3C444 /* ZHUIKitGameViewController.m */; };
+		C6592B751BEE8AFC008FFBE2 /* ZHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84931BE4116700D3C444 /* ZHViewController.m */; };
+		C6592B761BEE8AFC008FFBE2 /* ZHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84971BE411CD00D3C444 /* ZHTableViewController.m */; };
+		C6592B781BEE8C3D008FFBE2 /* ZHCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84891BE3F8D300D3C444 /* ZHCellCollectionViewCell.m */; };
+		C6592B791BEE8C6B008FFBE2 /* UIColor+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */; };
 		C66091301BE54FAE001D5FEE /* UIColor+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */; };
 		C66091851BE80A06001D5FEE /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = C66091841BE80A06001D5FEE /* Documents */; };
+		C66091B71BED7B8B001D5FEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C66091B61BED7B8B001D5FEE /* main.m */; };
+		C66091C01BED7B8B001D5FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66091BE1BED7B8B001D5FEE /* Main.storyboard */; };
+		C66091C21BED7B8B001D5FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66091C11BED7B8B001D5FEE /* Assets.xcassets */; };
+		C66091CD1BED7B8B001D5FEE /* MinesweeperTVOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C66091CC1BED7B8B001D5FEE /* MinesweeperTVOSTests.m */; };
+		C66091E21BED7CA1001D5FEE /* ZHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB11BE318AF00FEFAA2 /* ZHCell.m */; };
+		C66091E31BED7CA1001D5FEE /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
+		C66091E41BED7CA5001D5FEE /* ZHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */; };
+		C66091E51BED7CF4001D5FEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C66091B91BED7B8B001D5FEE /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C62DBB741BE3189700FEFAA2;
 			remoteInfo = Minesweeper;
+		};
+		C66091C91BED7B8B001D5FEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62DBB6D1BE3189700FEFAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C66091B21BED7B8B001D5FEE;
+			remoteInfo = MinesweeperTVOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -91,6 +112,18 @@
 		C660912E1BE54FAE001D5FEE /* UIColor+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZH.h"; sourceTree = "<group>"; };
 		C660912F1BE54FAE001D5FEE /* UIColor+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZH.m"; sourceTree = "<group>"; };
 		C66091841BE80A06001D5FEE /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
+		C66091B31BED7B8B001D5FEE /* MinesweeperTVOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinesweeperTVOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66091B61BED7B8B001D5FEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C66091B81BED7B8B001D5FEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C66091B91BED7B8B001D5FEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C66091BB1BED7B8B001D5FEE /* ZHTVOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHTVOptionsViewController.h; sourceTree = "<group>"; };
+		C66091BC1BED7B8B001D5FEE /* ZHTVOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHTVOptionsViewController.m; sourceTree = "<group>"; };
+		C66091BF1BED7B8B001D5FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C66091C11BED7B8B001D5FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C66091C31BED7B8B001D5FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66091C81BED7B8B001D5FEE /* MinesweeperTVOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinesweeperTVOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66091CC1BED7B8B001D5FEE /* MinesweeperTVOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinesweeperTVOSTests.m; sourceTree = "<group>"; };
+		C66091CE1BED7B8B001D5FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +142,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C62DBB9B1BE3189700FEFAA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66091B01BED7B8B001D5FEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66091C51BED7B8B001D5FEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,6 +250,8 @@
 				C62DBB771BE3189700FEFAA2 /* Minesweeper */,
 				C62DBB961BE3189700FEFAA2 /* MinesweeperTests */,
 				C62DBBA11BE3189700FEFAA2 /* MinesweeperUITests */,
+				C66091B41BED7B8B001D5FEE /* MinesweeperTVOS */,
+				C66091CB1BED7B8B001D5FEE /* MinesweeperTVOSTests */,
 				C62DBB761BE3189700FEFAA2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,6 +262,8 @@
 				C62DBB751BE3189700FEFAA2 /* Minesweeper.app */,
 				C62DBB931BE3189700FEFAA2 /* MinesweeperTests.xctest */,
 				C62DBB9E1BE3189700FEFAA2 /* MinesweeperUITests.xctest */,
+				C66091B31BED7B8B001D5FEE /* MinesweeperTVOS.app */,
+				C66091C81BED7B8B001D5FEE /* MinesweeperTVOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +369,38 @@
 			name = UserDefaults;
 			sourceTree = "<group>";
 		};
+		C66091B41BED7B8B001D5FEE /* MinesweeperTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				C66091B81BED7B8B001D5FEE /* AppDelegate.h */,
+				C66091B91BED7B8B001D5FEE /* AppDelegate.m */,
+				C66091BB1BED7B8B001D5FEE /* ZHTVOptionsViewController.h */,
+				C66091BC1BED7B8B001D5FEE /* ZHTVOptionsViewController.m */,
+				C66091BE1BED7B8B001D5FEE /* Main.storyboard */,
+				C66091C11BED7B8B001D5FEE /* Assets.xcassets */,
+				C66091C31BED7B8B001D5FEE /* Info.plist */,
+				C66091B51BED7B8B001D5FEE /* Supporting Files */,
+			);
+			path = MinesweeperTVOS;
+			sourceTree = "<group>";
+		};
+		C66091B51BED7B8B001D5FEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C66091B61BED7B8B001D5FEE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C66091CB1BED7B8B001D5FEE /* MinesweeperTVOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				C66091CC1BED7B8B001D5FEE /* MinesweeperTVOSTests.m */,
+				C66091CE1BED7B8B001D5FEE /* Info.plist */,
+			);
+			path = MinesweeperTVOSTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +457,41 @@
 			productReference = C62DBB9E1BE3189700FEFAA2 /* MinesweeperUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C66091B21BED7B8B001D5FEE /* MinesweeperTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66091CF1BED7B8B001D5FEE /* Build configuration list for PBXNativeTarget "MinesweeperTVOS" */;
+			buildPhases = (
+				C66091AF1BED7B8B001D5FEE /* Sources */,
+				C66091B01BED7B8B001D5FEE /* Frameworks */,
+				C66091B11BED7B8B001D5FEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinesweeperTVOS;
+			productName = MinesweeperTVOS;
+			productReference = C66091B31BED7B8B001D5FEE /* MinesweeperTVOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C66091C71BED7B8B001D5FEE /* MinesweeperTVOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66091D21BED7B8B001D5FEE /* Build configuration list for PBXNativeTarget "MinesweeperTVOSTests" */;
+			buildPhases = (
+				C66091C41BED7B8B001D5FEE /* Sources */,
+				C66091C51BED7B8B001D5FEE /* Frameworks */,
+				C66091C61BED7B8B001D5FEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66091CA1BED7B8B001D5FEE /* PBXTargetDependency */,
+			);
+			name = MinesweeperTVOSTests;
+			productName = MinesweeperTVOSTests;
+			productReference = C66091C81BED7B8B001D5FEE /* MinesweeperTVOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -394,6 +512,13 @@
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = C62DBB741BE3189700FEFAA2;
 					};
+					C66091B21BED7B8B001D5FEE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					C66091C71BED7B8B001D5FEE = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = C66091B21BED7B8B001D5FEE;
+					};
 				};
 			};
 			buildConfigurationList = C62DBB701BE3189700FEFAA2 /* Build configuration list for PBXProject "Minesweeper" */;
@@ -412,6 +537,8 @@
 				C62DBB741BE3189700FEFAA2 /* Minesweeper */,
 				C62DBB921BE3189700FEFAA2 /* MinesweeperTests */,
 				C62DBB9D1BE3189700FEFAA2 /* MinesweeperUITests */,
+				C66091B21BED7B8B001D5FEE /* MinesweeperTVOS */,
+				C66091C71BED7B8B001D5FEE /* MinesweeperTVOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -437,6 +564,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C62DBB9C1BE3189700FEFAA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66091B11BED7B8B001D5FEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66091C21BED7B8B001D5FEE /* Assets.xcassets in Resources */,
+				C66091C01BED7B8B001D5FEE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66091C61BED7B8B001D5FEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,6 +627,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C66091AF1BED7B8B001D5FEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66091E51BED7CF4001D5FEE /* AppDelegate.m in Sources */,
+				C6592B791BEE8C6B008FFBE2 /* UIColor+ZH.m in Sources */,
+				C6592B741BEE8AE2008FFBE2 /* ZHUIKitGameViewController.m in Sources */,
+				C6592B761BEE8AFC008FFBE2 /* ZHTableViewController.m in Sources */,
+				C6592B731BEE8901008FFBE2 /* ZHTVOptionsViewController.m in Sources */,
+				C6592B781BEE8C3D008FFBE2 /* ZHCellCollectionViewCell.m in Sources */,
+				C66091E41BED7CA5001D5FEE /* ZHUserDefaults.m in Sources */,
+				C66091E31BED7CA1001D5FEE /* ZHBoard.m in Sources */,
+				C66091B71BED7B8B001D5FEE /* main.m in Sources */,
+				C6592B751BEE8AFC008FFBE2 /* ZHViewController.m in Sources */,
+				C66091E21BED7CA1001D5FEE /* ZHCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66091C41BED7B8B001D5FEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66091CD1BED7B8B001D5FEE /* MinesweeperTVOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -496,6 +665,11 @@
 			isa = PBXTargetDependency;
 			target = C62DBB741BE3189700FEFAA2 /* Minesweeper */;
 			targetProxy = C62DBB9F1BE3189700FEFAA2 /* PBXContainerItemProxy */;
+		};
+		C66091CA1BED7B8B001D5FEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C66091B21BED7B8B001D5FEE /* MinesweeperTVOS */;
+			targetProxy = C66091C91BED7B8B001D5FEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -514,6 +688,14 @@
 				C62DBB8C1BE3189700FEFAA2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C66091BE1BED7B8B001D5FEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C66091BF1BED7B8B001D5FEE /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -673,6 +855,66 @@
 			};
 			name = Release;
 		};
+		C66091D01BED7B8B001D5FEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = MinesweeperTVOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.MinesweeperTVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C66091D11BED7B8B001D5FEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MinesweeperTVOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.MinesweeperTVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		C66091D31BED7B8B001D5FEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = MinesweeperTVOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.MinesweeperTVOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinesweeperTVOS.app/MinesweeperTVOS";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C66091D41BED7B8B001D5FEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MinesweeperTVOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.MinesweeperTVOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinesweeperTVOS.app/MinesweeperTVOS";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -708,6 +950,24 @@
 			buildConfigurations = (
 				C62DBBAE1BE3189700FEFAA2 /* Debug */,
 				C62DBBAF1BE3189700FEFAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66091CF1BED7B8B001D5FEE /* Build configuration list for PBXNativeTarget "MinesweeperTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66091D01BED7B8B001D5FEE /* Debug */,
+				C66091D11BED7B8B001D5FEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66091D21BED7B8B001D5FEE /* Build configuration list for PBXNativeTarget "MinesweeperTVOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66091D31BED7B8B001D5FEE /* Debug */,
+				C66091D41BED7B8B001D5FEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

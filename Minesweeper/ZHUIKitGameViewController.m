@@ -174,4 +174,18 @@
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator{
+    NSIndexPath *prevIndexPath = [context previouslyFocusedIndexPath];
+    if (prevIndexPath) {
+        ZHCellCollectionViewCell *cell = (ZHCellCollectionViewCell*)[collectionView cellForItemAtIndexPath:prevIndexPath];
+        [cell setCell:cell.cell];
+    }
+    
+    NSIndexPath *nextIndexPath = [context nextFocusedIndexPath];
+    if (nextIndexPath) {
+        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:nextIndexPath];
+        cell.backgroundColor = [UIColor greenColor];
+    }
+}
+
 @end
