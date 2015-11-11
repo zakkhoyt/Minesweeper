@@ -43,6 +43,9 @@
 		C66091E31BED7CA1001D5FEE /* ZHBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBBB41BE3193300FEFAA2 /* ZHBoard.m */; };
 		C66091E41BED7CA5001D5FEE /* ZHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B848F1BE4023C00D3C444 /* ZHUserDefaults.m */; };
 		C66091E51BED7CF4001D5FEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C66091B91BED7B8B001D5FEE /* AppDelegate.m */; };
+		C68F44F21BF310510044F020 /* ZHSpriteKitGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB841BE3189700FEFAA2 /* ZHSpriteKitGameViewController.m */; };
+		C68F44F31BF310620044F020 /* ZHCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C62B84A01BE4593C00D3C444 /* ZHCellNode.m */; };
+		C68F44F41BF310620044F020 /* ZHGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C62DBB7F1BE3189700FEFAA2 /* ZHGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -631,9 +634,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F44F21BF310510044F020 /* ZHSpriteKitGameViewController.m in Sources */,
 				C66091E51BED7CF4001D5FEE /* AppDelegate.m in Sources */,
 				C6592B791BEE8C6B008FFBE2 /* UIColor+ZH.m in Sources */,
 				C6592B741BEE8AE2008FFBE2 /* ZHUIKitGameViewController.m in Sources */,
+				C68F44F31BF310620044F020 /* ZHCellNode.m in Sources */,
 				C6592B761BEE8AFC008FFBE2 /* ZHTableViewController.m in Sources */,
 				C6592B731BEE8901008FFBE2 /* ZHTVOptionsViewController.m in Sources */,
 				C6592B781BEE8C3D008FFBE2 /* ZHCellCollectionViewCell.m in Sources */,
@@ -641,6 +646,7 @@
 				C66091E31BED7CA1001D5FEE /* ZHBoard.m in Sources */,
 				C66091B71BED7B8B001D5FEE /* main.m in Sources */,
 				C6592B751BEE8AFC008FFBE2 /* ZHViewController.m in Sources */,
+				C68F44F41BF310620044F020 /* ZHGameScene.m in Sources */,
 				C66091E21BED7CA1001D5FEE /* ZHCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

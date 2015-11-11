@@ -76,6 +76,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     board.grid = YES;
 //    if([ZHUserDefaults renderType] == ZHRenderTypeUIKit){
         [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
+//            [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
 //    } else if([ZHUserDefaults renderType] == ZHRenderTypeSpriteKit){
 //        [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
 //    }
@@ -88,7 +89,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.sizeTableView){
-        return 5;
+        return 11;
     } else if(tableView == self.difficultyTableView){
         return 5;
     } else {

@@ -419,6 +419,81 @@
             </objects>
             <point key="canvasLocation" x="-2119" y="505"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="o9h-rH-jet">
+            <objects>
+                <viewController id="xe8-XA-nuk" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nhz-1V-LWb"/>
+                        <viewControllerLayoutGuide type="bottom" id="BBt-bi-gWD"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1qQ-3c-m50" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bso-Iy-IRj">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                                <animations/>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-qy-VkX">
+                                <rect key="frame" x="15" y="119" width="1880" height="70"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="20x10"/>
+                                    <segment title="30x15"/>
+                                    <segment title="40x20"/>
+                                    <segment title="50x25"/>
+                                    <segment title="60x30"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-h6-gAu">
+                                <rect key="frame" x="15" y="196" width="1880" height="70"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Hard"/>
+                                    <segment title="Expert"/>
+                                    <segment title="Heroic"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minesweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3e-Dg-r5V">
+                                <rect key="frame" x="20" y="20" width="1880" height="91"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-yB-11w">
+                                <rect key="frame" x="25" y="974" width="1870" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="Hlf-qy-VkX" firstAttribute="leading" secondItem="1qQ-3c-m50" secondAttribute="leadingMargin" constant="-5" id="0AL-A9-vNz"/>
+                            <constraint firstItem="Hlf-qy-VkX" firstAttribute="top" secondItem="W3e-Dg-r5V" secondAttribute="bottom" constant="8" id="0Ho-Ax-U7G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tpe-yB-11w" secondAttribute="trailing" constant="5" id="1ef-G2-mYf"/>
+                            <constraint firstItem="Tpe-yB-11w" firstAttribute="leading" secondItem="1qQ-3c-m50" secondAttribute="leadingMargin" constant="5" id="41r-xn-cmN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hlf-qy-VkX" secondAttribute="trailing" constant="5" id="E3d-F6-Ido"/>
+                            <constraint firstItem="W3e-Dg-r5V" firstAttribute="leading" secondItem="1qQ-3c-m50" secondAttribute="leadingMargin" id="Oec-bq-2lH"/>
+                            <constraint firstItem="4G2-h6-gAu" firstAttribute="leading" secondItem="1qQ-3c-m50" secondAttribute="leadingMargin" constant="-5" id="Q9q-Nz-SGc"/>
+                            <constraint firstItem="4G2-h6-gAu" firstAttribute="top" secondItem="Hlf-qy-VkX" secondAttribute="bottom" constant="8" id="c7Y-D6-diA"/>
+                            <constraint firstItem="W3e-Dg-r5V" firstAttribute="trailing" secondItem="1qQ-3c-m50" secondAttribute="trailingMargin" id="h6o-jc-RRW"/>
+                            <constraint firstItem="BBt-bi-gWD" firstAttribute="top" secondItem="Tpe-yB-11w" secondAttribute="bottom" constant="20" id="l9g-uk-2xg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4G2-h6-gAu" secondAttribute="trailing" constant="5" id="mbT-zp-ZlC"/>
+                            <constraint firstItem="W3e-Dg-r5V" firstAttribute="top" secondItem="nhz-1V-LWb" secondAttribute="bottom" constant="20" id="p7w-ye-3VL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e00-as-6mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="554"/>
+        </scene>
     </scenes>
     <resources>
         <image name="mine" width="256" height="256"/>
