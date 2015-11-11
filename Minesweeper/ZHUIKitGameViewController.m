@@ -68,7 +68,7 @@
 
 #pragma mark IBActions
 
-- (IBAction)quitButtonTouchUpInside:(id)sender {
+-(void)quit{
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Quit?" message:@"You will lose any progress gained" preferredStyle:UIAlertControllerStyleAlert];
     
     [ac addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -79,10 +79,16 @@
     }]];
     
     [self presentViewController:ac animated:YES completion:NULL];
-    
+
+}
+- (IBAction)quitButtonTouchUpInside:(id)sender {
+    [self quit];
+}
+- (IBAction)quitButtonPrimaryAction:(id)sender {
+    [self quit];
 }
 
-- (IBAction)validateButtonTouchUpInside:(id)sender {
+-(void)validate{
     if([self.board validate] == YES){
         NSLog(@"Validated!");
         
@@ -113,11 +119,27 @@
         [self presentViewController:ac animated:YES completion:NULL];
     }
 }
+- (IBAction)validateButtonTouchUpInside:(id)sender {
+    [self validate];
+}
+- (IBAction)validateButtonPrimaryAction:(id)sender {
+    [self validate];
+}
 
-- (IBAction)cheatButtonTouchUpInside:(id)sender {
+-(void)cheat{
     [self.board cheat];
     [self refreshUI];
 }
+
+
+- (IBAction)cheatButtonTouchUpInside:(id)sender {
+    [self cheat];
+}
+#if defined(TARGET_OS_TV)
+- (IBAction)cheatButtonPrimaryAction:(id)sender {
+    [self cheat];
+}
+#endif
 
 
 @end
