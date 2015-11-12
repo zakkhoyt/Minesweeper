@@ -23,12 +23,12 @@ static NSString *SegueOptionsToGame = @"SegueOptionsToGame";
 static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 @interface ZHOptionsTableViewController ()
-//@property (weak, nonatomic) IBOutlet UIStepper *boardWidthStepper;
+@property (weak, nonatomic) IBOutlet UIStepper *boardWidthStepper;
 @property (weak, nonatomic) IBOutlet UILabel *boardWidthLabel;
-//@property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
+@property (weak, nonatomic) IBOutlet UIStepper *mineCountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *mineCountLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *renderTypeSegment;
-//@property (weak, nonatomic) IBOutlet UISwitch *gridSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *gridSwitch;
 @end
 
 @interface ZHOptionsTableViewController (UITableViewDelegate) <UITableViewDelegate>

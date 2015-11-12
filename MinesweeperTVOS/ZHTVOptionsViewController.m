@@ -69,7 +69,40 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 }
 
 
-
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self printTouches:touches withEvent:event];
+//}
+//
+//-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self printTouches:touches withEvent:event];
+//}
+//-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self printTouches:touches withEvent:event];
+//}
+//
+//-(void)printTouches:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [touches enumerateObjectsUsingBlock:^(UITouch * _Nonnull press, BOOL * _Nonnull stop) {
+//        NSLog(@"Touch: %@", press.description);
+//    }];
+//}
+//
+//-(void)pressesBegan:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
+//    [self printPresses:presses withEvent:event];
+//}
+//
+//-(void)pressesChanged:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
+//    [self printPresses:presses withEvent:event];
+//}
+//
+//-(void)pressesEnded:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
+//     [self printPresses:presses withEvent:event];   
+//}
+//
+//-(void)printPresses:(NSSet<UIPress *> *)presses withEvent:(UIPressesEvent *)event {
+//    [presses enumerateObjectsUsingBlock:^(UIPress * _Nonnull press, BOOL * _Nonnull stop) {
+//        NSLog(@"Press: %@", press.description);
+//    }];
+//}
 
 -(IBAction)startButtonPrimaryActionTriggered:(UIButton*)sender{
     NSLog(@"start");
