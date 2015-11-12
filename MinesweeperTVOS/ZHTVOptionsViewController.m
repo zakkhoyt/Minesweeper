@@ -45,6 +45,11 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     UITableViewCell *cell2 = [self.difficultyTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.difficultyIndex inSection:0]];
     cell2.accessoryType = UITableViewCellAccessoryCheckmark;
 
+    for(NSUInteger index = 5; index < 100; index+=5){
+        NSUInteger boardWidth = index;
+        NSUInteger boardHeight = boardWidth * (self.view.bounds.size.height - 115) / self.view.bounds.size.width;
+        NSLog(@"%lux%lu", (unsigned long) boardWidth, (unsigned long) boardHeight);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +74,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 -(IBAction)startButtonPrimaryActionTriggered:(UIButton*)sender{
     NSLog(@"start");
 
-    NSUInteger boardWidth = 10 + 5 * self.sizeIndex;
+    NSUInteger boardWidth = 20 + 10 * self.sizeIndex;
     NSUInteger boardHeight = boardWidth * (self.view.bounds.size.height - 115) / self.view.bounds.size.width;
     NSUInteger mineCount = boardWidth * (self.difficultyIndex + 1);
     ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
@@ -89,7 +94,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.sizeTableView){
-        return 11;
+        return 7;
     } else if(tableView == self.difficultyTableView){
         return 5;
     } else {
@@ -102,7 +107,33 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     
     if(tableView == self.sizeTableView){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SizeCell"];
-        cell.textLabel.text = [NSString stringWithFormat:@"%lu", 10 + indexPath.row * 5];
+        
+        switch (indexPath.item) {
+            case 0:
+                cell.textLabel.text = @"20x10";
+                break;
+            case 1:
+                cell.textLabel.text = @"30x15";
+                break;
+            case 2:
+                cell.textLabel.text = @"40x20";
+                break;
+            case 3:
+                cell.textLabel.text = @"50x25";
+                break;
+            case 4:
+                cell.textLabel.text = @"60x30";
+                break;
+            case 5:
+                cell.textLabel.text = @"70x35";
+                break;
+            case 6:
+                cell.textLabel.text = @"80x40";
+                break;
+            default:
+                break;
+        }
+
         return cell;
     } else if(tableView == self.difficultyTableView){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DifficultyCell"];
