@@ -17,7 +17,6 @@
 
 @implementation ZHSKCursorView
 
-
 -(void)setTapBlock:(ZHSKCursorViewPointBlock)tapBlock{
     _tapBlock = tapBlock;
 }
@@ -44,8 +43,15 @@
 }
 
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.cursorImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    self.cursorImageView.layer.borderWidth = 1.0;
+}
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.cursorImageView.layer.borderColor = [UIColor clearColor].CGColor;
+    self.cursorImageView.layer.borderWidth = 0.0;
+    
     if(self.tapBlock){
         self.tapBlock(CGPointMake(_firstX, _firstY));
     }

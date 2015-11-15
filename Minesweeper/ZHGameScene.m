@@ -150,9 +150,17 @@
                     // Add a label
                     SKLabelNode *labelNode = [[SKLabelNode alloc]initWithFontNamed:@"Halvetica"];
                     labelNode.name = @"labelNode";
+#if defined(TARGET_OS_TV)
+                    labelNode.xScale = 1.0;
+                    labelNode.yScale = 1.0;
+                    labelNode.fontSize = 16;
+#else
+                    
                     labelNode.xScale = 1.5;
                     labelNode.yScale = 1.0;
                     labelNode.fontSize = 8;
+#endif
+
                     labelNode.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
                     labelNode.fontColor = [UIColor zhTextColor];
                     labelNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
