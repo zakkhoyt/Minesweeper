@@ -12,4 +12,5 @@
 @interface ZHGameScene : SKScene
 @property (nonatomic, strong) ZHBoard *board;
 -(void)renderBoard;
+-(void)invokeTapAtPoint:(CGPoint)point;
 @end

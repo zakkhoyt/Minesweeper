@@ -11,4 +11,5 @@
 
 @interface ZHCellCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) ZHCell *cell;
+-(void)setFocused:(BOOL)focused;
 @end

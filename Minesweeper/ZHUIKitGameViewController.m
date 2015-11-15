@@ -200,13 +200,16 @@
     NSIndexPath *prevIndexPath = [context previouslyFocusedIndexPath];
     if (prevIndexPath) {
         ZHCellCollectionViewCell *cell = (ZHCellCollectionViewCell*)[collectionView cellForItemAtIndexPath:prevIndexPath];
+        [cell setFocused:NO];
         [cell setCell:cell.cell];
     }
     
     NSIndexPath *nextIndexPath = [context nextFocusedIndexPath];
     if (nextIndexPath) {
-        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:nextIndexPath];
-        cell.backgroundColor = [UIColor greenColor];
+        ZHCellCollectionViewCell *cell = (ZHCellCollectionViewCell*)[collectionView cellForItemAtIndexPath:nextIndexPath];
+        [cell setBackgroundColor:[UIColor greenColor]];
+        [cell setFocused:YES];
+
     }
 }
 

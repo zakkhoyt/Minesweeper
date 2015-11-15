@@ -34,8 +34,8 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sizeIndex = 2;
-    self.difficultyIndex = 2;
+    self.sizeIndex = 0;
+    self.difficultyIndex = 0;
     [self.sizeTableView reloadData];
     [self.sizeTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.sizeIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
     UITableViewCell *cell = [self.sizeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.sizeIndex inSection:0]];
@@ -54,7 +54,7 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-  
+    NSLog(@"Memory Low!");
     // Dispose of any resources that can be recreated.
 }
 
@@ -113,8 +113,8 @@ static NSString *SegueOptionsToGameCV = @"SegueOptionsToGameCV";
     ZHBoard *board = [[ZHBoard alloc]initWithSize:CGSizeMake(boardWidth, boardHeight) mineCount:mineCount];
     board.grid = YES;
 //    if([ZHUserDefaults renderType] == ZHRenderTypeUIKit){
-        [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
-//            [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
+//        [self performSegueWithIdentifier:SegueOptionsToGameCV sender:board];
+            [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
 //    } else if([ZHUserDefaults renderType] == ZHRenderTypeSpriteKit){
 //        [self performSegueWithIdentifier:SegueOptionsToGame sender:board];
 //    }

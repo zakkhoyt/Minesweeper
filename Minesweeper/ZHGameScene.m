@@ -34,6 +34,8 @@
     [self renderBoard];
 }
 
+
+#ifndef TARGET_OS_TV
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [touches enumerateObjectsUsingBlock:^(UITouch *touch, BOOL * _Nonnull stop) {
@@ -58,6 +60,31 @@
                 }
             }
         }];
+    }];
+}
+#endif
+
+
+-(void)invokeTapAtPoint:(CGPoint)point{
+    // Get all nodes at touch point
+    NSArray *nodes = [self nodesAtPoint:point];
+    
+    // Ensure we get the cellNode, not the gridNode
+    [nodes enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL * _Nonnull stop) {
+        //            if([node.name isEqualToString:@"cellNode"]){
+        if([node.name rangeOfString:@"cellNode"].location != NSNotFound){
+            ZHCellNode *cellNode = (ZHCellNode*)node;
+            ZHCell *cell = cellNode.cell;
+            
+            if(cell.isPlayed == NO){
+                self.board.roundCount++;
+                [self.board playCell:cell completionBlock:^{
+                    [self renderBoard];
+                }];
+                *stop = YES;
+                return;
+            }
+        }
     }];
 }
 

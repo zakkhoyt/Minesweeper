@@ -9,9 +9,10 @@
 #import "ZHSpriteKitGameViewController.h"
 #import "ZHGameScene.h"
 #import "ZHBoard.h"
+#import "ZHSKCursorView.h"
 
 @interface ZHSpriteKitGameViewController ()
-@property (weak, nonatomic) IBOutlet SKView *skView;
+@property (weak, nonatomic) IBOutlet ZHSKCursorView *skView;
 @property (nonatomic, strong) ZHGameScene *scene;
 @property (weak, nonatomic) IBOutlet UILabel *roundsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minesLabel;
@@ -23,10 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.skView.showsFPS = YES;
-//    self.skView.showsNodeCount = YES;
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     self.skView.ignoresSiblingOrder = YES;
+    // Callback for tap event
+    
+    [self.skView setTapBlock:^(CGPoint point) {
+//        [self.scene tapAtPoint:];
+        [self.scene invokeTapAtPoint:CGPointMake(point.x, self.skView.bounds.size.height - point.y)];
+        NSLog(@"Tapped");
+    }];
+
     
     self.scene = [[ZHGameScene alloc]initWithSize:self.skView.bounds.size];
     self.scene.scaleMode = SKSceneScaleModeFill;
