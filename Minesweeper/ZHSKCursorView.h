@@ -12,5 +12,7 @@ typedef void (^ZHSKCursorViewPointBlock)(CGPoint point);
 
 
 @interface ZHSKCursorView : SKView
+#ifdef TARGET_OS_TV
 -(void)setTapBlock:(ZHSKCursorViewPointBlock)tapBlock;
+#endif
 @end

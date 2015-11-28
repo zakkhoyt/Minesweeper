@@ -10,6 +10,6 @@
 
 @class ZHCell;
 
-@interface ZHCellNode : SKShapeNode
+@interface ZHCellNode : SKNode
 @property (nonatomic, strong) ZHCell *cell;
 @end

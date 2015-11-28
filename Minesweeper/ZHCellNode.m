@@ -15,6 +15,4 @@
 
 @implementation ZHCellNode
 
-
-
 @end

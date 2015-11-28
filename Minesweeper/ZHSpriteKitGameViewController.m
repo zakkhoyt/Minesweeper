@@ -29,17 +29,28 @@
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     self.skView.ignoresSiblingOrder = YES;
     // Callback for tap event
-    
+
+#ifdef TARGET_OS_TV
     [self.skView setTapBlock:^(CGPoint point) {
-//        [self.scene tapAtPoint:];
         [self.scene invokeTapAtPoint:CGPointMake(point.x, self.skView.bounds.size.height - point.y)];
         NSLog(@"Tapped");
     }];
+#endif
 
+    
     
     self.scene = [[ZHGameScene alloc]initWithSize:self.skView.bounds.size];
     self.scene.scaleMode = SKSceneScaleModeFill;
     self.scene.board = self.board;
+    
+//#ifndef TARGET_OS_TV
+//    self.skView.userIn
+//    self.scene.userInteractionEnabled = NO;
+//#else
+//    self.scene.userInteractionEnabled = NO;
+//#endif
+    self.skView.userInteractionEnabled = NO;
+    self.scene.userInteractionEnabled = YES;
     
     // Present the scene.
     [self.skView presentScene:self.scene];

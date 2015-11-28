@@ -135,7 +135,7 @@
 - (IBAction)cheatButtonTouchUpInside:(id)sender {
     [self cheat];
 }
-#if defined(TARGET_OS_TV)
+#ifdef TARGET_OS_TV
 - (IBAction)cheatButtonPrimaryAction:(id)sender {
     [self cheat];
 }

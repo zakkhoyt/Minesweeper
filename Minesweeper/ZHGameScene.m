@@ -21,10 +21,7 @@
     }];
     
     // Render cells then grid
-    [self renderCells];
-    if(self.board.grid == YES){
-        [self renderGrid];
-    }
+    [self drawCells];
 }
 
 
@@ -72,7 +69,8 @@
     // Ensure we get the cellNode, not the gridNode
     [nodes enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL * _Nonnull stop) {
         //            if([node.name isEqualToString:@"cellNode"]){
-        if([node.name rangeOfString:@"cellNode"].location != NSNotFound){
+//        if([node.name rangeOfString:@"cellNode"].location != NSNotFound){
+        if([node isKindOfClass:[ZHCellNode class]]){
             ZHCellNode *cellNode = (ZHCellNode*)node;
             ZHCell *cell = cellNode.cell;
             
@@ -97,60 +95,61 @@
 }
 
 
--(void)renderGrid{
-    // Draw vertical lines
-    for(NSUInteger x = 0; x <= self.board.size.width; x++){
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, nil, x * [self xSpacing], 0);
-        CGPathAddLineToPoint(path, nil, x * [self xSpacing], self.frame.size.height);
-        SKShapeNode *line = [SKShapeNode shapeNodeWithPath:path];
-        line.name = @"line";
-        line.strokeColor = [UIColor greenColor];
-        [self addChild:line];
-    }
-    
-    // Draw horizontal lines
-    for(NSUInteger y = 0; y <= self.board.size.height; y++){
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, nil, 0, y * [self ySpacing]);
-        CGPathAddLineToPoint(path, nil, self.frame.size.width, y * [self ySpacing]);
-        SKShapeNode *line = [SKShapeNode shapeNodeWithPath:path];
-        line.name = @"line";
-        line.strokeColor = [UIColor greenColor];
-        [self addChild:line];
-    }
-}
 
--(void)renderCells{
+-(void)drawCells{
     CGFloat xSpacing = [self xSpacing];
     CGFloat ySpacing = [self ySpacing];
+    
     for(NSUInteger y = 0; y <= self.board.size.height; y++){
         for(NSUInteger x = 0; x <= self.board.size.width; x++){
             NSString *key = [ZHCell keyFromX:x Y:y];
             ZHCell *cell = [self.board cellForKey:key];
- 
-            CGMutablePathRef path = CGPathCreateMutable();
-            CGPathMoveToPoint(path, nil, cell.x * xSpacing, cell.y * ySpacing);
-            CGPathAddLineToPoint(path, nil, cell.x * xSpacing + xSpacing, cell.y * ySpacing);
-            CGPathAddLineToPoint(path, nil, cell.x * xSpacing + xSpacing, cell.y * ySpacing + ySpacing);
-            CGPathAddLineToPoint(path, nil, cell.x * xSpacing, cell.y * ySpacing + ySpacing);
-
-            // Create node to contain cell
-            ZHCellNode *cellNode = [ZHCellNode shapeNodeWithPath:path];
+            
+            ZHCellNode *cellNode = [ZHCellNode node];
             cellNode.cell = cell;
             cellNode.name = [NSString stringWithFormat:@"cellNode:%@", cell.key];
-            cellNode.strokeColor = [UIColor clearColor];
+            cellNode.position = CGPointMake(x * xSpacing + xSpacing / 2.0,
+                                            y * ySpacing + ySpacing / 2.0);
+            
+            CGRect rect = CGRectMake(-xSpacing / 2.0, -ySpacing / 2.0, xSpacing, ySpacing);
+            SKShapeNode *backgroundNode = [SKShapeNode shapeNodeWithRect:rect];
+            backgroundNode.name = @"backgroundNode";
+            backgroundNode.fillColor = [UIColor purpleColor];
+            backgroundNode.strokeColor = [UIColor orangeColor];
+            [cellNode addChild:backgroundNode];
+            
+            
+            SKSpriteNode *mineNode = [SKSpriteNode spriteNodeWithImageNamed:@"mine"];
+            mineNode.name = @"mineNode";
+            mineNode.size = CGSizeMake(xSpacing, ySpacing);
+            mineNode.yScale = xSpacing / ySpacing;
+            mineNode.hidden = YES;
+            [cellNode addChild:mineNode];
+            
             [self addChild:cellNode];
+        }
+    }
+    [self updateCells];
+}
+
+
+-(void)updateCells{
+    [self.children enumerateObjectsUsingBlock:^(SKNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if([obj isKindOfClass:[ZHCellNode class]]){
+            ZHCellNode *cellNode = (ZHCellNode*)obj;
+            ZHCell *cell = cellNode.cell;
+            SKShapeNode *backgroundNode = (SKShapeNode*)[cellNode childNodeWithName:@"backgroundNode"];
+            SKSpriteNode *mineNode = (SKSpriteNode*)[cellNode childNodeWithName:@"mineNode"];
             
             // Set cell color and text
             if(cell.isPlayed == YES){
-                cellNode.fillColor = cell.isCheat ? [UIColor zhCheatColor] : [UIColor zhPlayedColor];
-//                cellNode.strokeColor = [UIColor clearColor];
+                backgroundNode.fillColor = cell.isCheat ? [UIColor zhCheatColor] : [UIColor zhPlayedColor];
+                //                cellNode.strokeColor = [UIColor clearColor];
                 if(cell.adjacentBombCount > 0){
                     // Add a label
                     SKLabelNode *labelNode = [[SKLabelNode alloc]initWithFontNamed:@"Halvetica"];
                     labelNode.name = @"labelNode";
-#if defined(TARGET_OS_TV)
+#ifdef TARGET_OS_TV
                     labelNode.xScale = 1.0;
                     labelNode.yScale = 1.0;
                     labelNode.fontSize = 16;
@@ -160,32 +159,28 @@
                     labelNode.yScale = 1.0;
                     labelNode.fontSize = 8;
 #endif
-
+                    
                     labelNode.text = [NSString stringWithFormat:@"%lu", (unsigned long)cell.adjacentBombCount];
                     labelNode.fontColor = [UIColor zhTextColor];
-                    labelNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
+                    //                    labelNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
                     [labelNode setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
                     [labelNode setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
-                    [self addChild:labelNode];
+                    [cellNode addChild:labelNode];
                 }
             } else {
-                cellNode.fillColor = [UIColor zhUnplayedColor];
-             //   cellNode.strokeColor = [UIColor zhGridColor];
+                backgroundNode.fillColor = [UIColor zhUnplayedColor];
+                //   cellNode.strokeColor = [UIColor zhGridColor];
             }
             
             // If mine, render mine
             if(cell.isBomb == YES && cell.bombVisible){
-                cellNode.fillColor = [UIColor zhMineColor];
-                SKSpriteNode *mineNode = [SKSpriteNode spriteNodeWithImageNamed:@"mine"];
-                mineNode.name = @"mineNode";
-                mineNode.position = CGPointMake(cell.x * xSpacing + xSpacing/2.0, cell.y * ySpacing + ySpacing/2.0);
-                mineNode.size = CGSizeMake(xSpacing, ySpacing);
-                [self addChild:mineNode];
+                backgroundNode.fillColor = [UIColor zhMineColor];
+                mineNode.hidden = NO;
             }
-        }
-    }
-}
 
+        }
+    }];
+}
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
